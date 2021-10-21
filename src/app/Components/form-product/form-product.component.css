@@ -1,0 +1,15 @@
+main {
+  margin-top: 2em;
+}
+
+button a,
+button a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-list{
+  display:flex;
+  justify-content: center;
+  margin-top: 4em;
+}
