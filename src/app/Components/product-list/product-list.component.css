@@ -1,0 +1,62 @@
+main {
+  margin-top: 2em;
+}
+
+button a,
+button a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-list{
+  display:flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+
+/* LISTA */
+.produto {
+  margin-top: 2em;
+  padding: 1em;
+  border-bottom: 1px solid #ddd;
+  display:flex;
+  justify-content: space-between;
+}
+
+.produto-info {
+  display:flex;
+}
+
+.produto-info img {
+  margin-right: 25px;
+}
+
+p {
+  margin: 0;
+}
+
+a,  a:hover {
+  text-decoration: none;
+}
+
+p span {
+  color: #777;
+}
+
+.categorias{
+  margin-top: 5px;
+}
+
+.categoria {
+  display: inline;
+  padding: 2px 8px;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: blueviolet;
+  color: #fff;
+}
+
+.categoria:nth-of-type(2){
+  background-color: green;
+}
