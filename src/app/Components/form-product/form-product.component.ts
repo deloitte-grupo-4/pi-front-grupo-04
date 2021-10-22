@@ -1,6 +1,8 @@
-import { Product } from './../../Models/product.model';
 import { Component, OnInit } from '@angular/core';
-import { FormProductServiceService } from 'src/app/Services/form-product-service.service';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/Services/product.service';
+import { Product } from './../../Models/product.model';
+
 
 @Component({
   selector: 'app-form-product',
@@ -9,7 +11,7 @@ import { FormProductServiceService } from 'src/app/Services/form-product-service
 })
 export class FormProductComponent implements OnInit {
 
-  constructor(private formProductServiceService:FormProductServiceService) { }
+  constructor(private productService:ProductService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +22,7 @@ export class FormProductComponent implements OnInit {
   category?:string;
   price?:number;
   description?:string;
-  qtd?:number;
+  quantity?:number;
   type?:string;
   size?:string;
 
@@ -30,12 +32,17 @@ export class FormProductComponent implements OnInit {
     this.product.category = this.category;
     this.product.price = this.price;
     this.product.description = this.description;
-    this.product.qtd = this.qtd;
+    this.product.quantity = this.quantity;
     this.product.type = this.type;
     this.product.size = this.size;
 
-    this.formProductServiceService.createProduct(this.product);
-    console.log("funcionou")
+    this.productService.createProduct(this.product);
+    
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+   });
+;
+
   }
 
 }

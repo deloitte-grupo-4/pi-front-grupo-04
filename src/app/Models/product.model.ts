@@ -3,7 +3,7 @@ export class Product {
   category?:string;
   price?:number;
   description?:string;
-  qtd?:number;
+  quantity?:number;
   type?:string;
   size?:string;
 }
