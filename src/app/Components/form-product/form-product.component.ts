@@ -45,7 +45,15 @@ export class FormProductComponent implements OnInit {
   }
 
   public sendFormUpdate(){
-    console.log(this.productUpdate);
+    this.productUpdate.name = this.name;
+    this.productUpdate.category = this.category;
+    this.productUpdate.price = this.price;
+    this.productUpdate.description = this.description;
+    this.productUpdate.quantity = this.quantity;
+    this.productUpdate.type = this.type;
+    this.productUpdate.size = this.size;
+    
+    this.productService.putProducts(this.productUpdate);
   }
 
 }

@@ -29,7 +29,10 @@ export class ProductService {
   }
 
   public receiveProduct(product:Product):void{
-    this.onEditClick.emit(product);
+    let obs = this.http.get<Product>(`http://localhost:8080/product/${product.id}`);
+    obs.subscribe((result)=>{
+      this.onEditClick.emit(result);
+    });
   }
 
 
