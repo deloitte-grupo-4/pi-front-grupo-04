@@ -1,13 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../Models/product.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
+  @Output() onEditClick:EventEmitter<Product> = new EventEmitter<Product>();
+  
   constructor(private http:HttpClient) {}
 
   public createProduct(product:Product):void{
@@ -24,6 +27,11 @@ export class ProductService {
       console.log(result);
     });
   }
+
+  public receiveProduct(product:Product):void{
+    this.onEditClick.emit(product);
+  }
+
 
   public deleteProduct(productId:number | undefined):void {
     this.http.delete(`http://localhost:8080/product/${productId}`).subscribe();

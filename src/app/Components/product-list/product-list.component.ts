@@ -23,6 +23,10 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  public sendProduct(product:Product):void{
+    this.productService.receiveProduct(product);
+  }
+
   public deleteProduct(productId:number | undefined):void {
     this.productService.deleteProduct(productId);
     for (let product of this.products) {

@@ -15,8 +15,8 @@
             </div>
 
             <div class="icons">
-                <a href="#">
-                    <span class="material-icons" >
+                <a routerLink="/product-form">
+                    <span class="material-icons" (click)="sendProduct(product)">
                     edit
                     </span>
                 </a>
@@ -31,5 +31,6 @@
         <div class="btn-list ">
             <a routerLink="/product-form"><button type="button" class="btn btn-success btn-lg">Cadastrar produto</button></a>
         </div>
+        
     </main>
 </body>

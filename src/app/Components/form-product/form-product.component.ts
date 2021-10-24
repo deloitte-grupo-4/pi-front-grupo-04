@@ -11,10 +11,13 @@ import { Product } from './../../Models/product.model';
 })
 export class FormProductComponent implements OnInit {
 
+  productUpdate:Product = new Product();
   constructor(private productService:ProductService, private router:Router) { }
 
   ngOnInit(): void {
-  }
+    this.productService.onEditClick.subscribe(resp =>
+    this.productUpdate = resp
+  )}
 
   product?:Product;
 
@@ -38,11 +41,11 @@ export class FormProductComponent implements OnInit {
 
     this.productService.createProduct(this.product);
     
-    this.router.navigate(['/']).then(() => {
-      window.location.reload();
-   });
-;
+    this.router.navigate(['/']);
+  }
 
+  public sendFormUpdate(){
+    console.log(this.productUpdate);
   }
 
 }

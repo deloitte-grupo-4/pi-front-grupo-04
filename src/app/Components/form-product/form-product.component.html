@@ -1,7 +1,7 @@
 <body>
   <main class="container">
       <h1>Cadastro de produto</h1>
-  <form (submit)=sendForm()>
+  <form>
       <div class="form-group">
         <label for="name">Nome:</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Nome do produto" [(ngModel)]="name">
@@ -37,7 +37,10 @@
           <input type="text" class="form-control" id="size" name="size" placeholder="Tamanho do produto"  [(ngModel)]="size">
         </div>
 
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-primary" (click)=sendForm()>Enviar</button>
+
+      <button type="submit" class="btn btn-primary" (click)=sendFormUpdate()>Atualizar</button>
+
     </form>
 
   </main>
