@@ -23,18 +23,18 @@
                <div>
                    <p>Tamanho:</p>
                    <div class="sizes">
-                       <span>P</span>
-                       <span>M</span>
-                       <span>G</span>
-                       <span class="selected">GG</span>
+                    <span
+                    *ngFor="let size of sizes"
+                   (click)="toggleClass(size)"
+                   [ngClass]="{'selected': size.active}">{{size.name}}</span>
                    </div>
                </div>
                <div>
                    <p>Quantidade:</p>
                    <div class="qtd">
-                       <span>-</span>
-                       <span class="number">1</span>
-                       <span>+</span>
+                       <button (click)="clickDecrease()">-</button>
+                       <span class="number">{{quantity}}</span>
+                       <button (click)="clickIncrease()">+</button>
                    </div>
                </div>
              </div>

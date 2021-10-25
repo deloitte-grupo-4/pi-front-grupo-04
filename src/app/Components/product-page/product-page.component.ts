@@ -18,5 +18,24 @@ export class ProductPageComponent implements OnInit {
     })
   }
 
+  sizes = [
+    {name:'P', active:false},
+    {name:'M', active:false},
+    {name:'G', active:false},
+    {name:'GG', active:true},
+  ];
 
+  toggleClass(size:any){
+    size.active = !size.active;
+  }
+
+  quantity = 2;
+
+  clickIncrease(){
+    this.quantity++;
+  }
+
+  clickDecrease(){
+    this.quantity <= 0 ? this.quantity = 0 : this.quantity--;
+  }
 }

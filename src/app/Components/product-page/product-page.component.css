@@ -65,7 +65,7 @@ main {
   width: 70%;
 }
 
-.sizes span, .qtd span {
+.sizes span, .qtd span, .product-box .qtd button {
   margin-top: none;
   background-color: #f0f0f0;
   color: var(--gray);
@@ -73,16 +73,25 @@ main {
   margin-right: 10px;
 }
 
+.sizes {
+  display: flex;
+  flex-direction: row;
+}
+
 .sizes .selected {
   background-color: var(--main);
   color: #fff;
 }
 
-.qtd span:first-of-type,
-.qtd span:last-of-type {
+.product-box .qtd button{
   background-color: #f0f0f0;
   color: var(--gray);
   padding: .5em 1em;
+  border: none;
+  height: 45px;
+  width: 50px;
+  margin-top: 0;
+  cursor: pointer;
 }
 
 .product-info button {
