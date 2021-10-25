@@ -18,7 +18,7 @@ export class FormProductComponent implements OnInit {
     this.productService.onEditClick.subscribe(resp => {
 
       this.productUpdate = resp;
-  
+
         this.name = resp.name;
         this.category = resp.category;
         this.price = resp.price;
@@ -28,9 +28,6 @@ export class FormProductComponent implements OnInit {
         this.size = resp.size;
 
     })
-
-    
-
   }
 
   product?:Product;
@@ -54,7 +51,7 @@ export class FormProductComponent implements OnInit {
     this.product.size = this.size;
 
     this.productService.createProduct(this.product);
-    
+
     this.router.navigate(['/']);
   }
 
@@ -66,7 +63,7 @@ export class FormProductComponent implements OnInit {
     this.productUpdate.quantity = this.quantity;
     this.productUpdate.type = this.type;
     this.productUpdate.size = this.size;
-    
+
     this.productService.putProducts(this.productUpdate);
 
     this.router.navigate(['/']);

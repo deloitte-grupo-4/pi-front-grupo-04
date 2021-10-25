@@ -7,6 +7,8 @@ import { FormProductComponent } from './Components/form-product/form-product.com
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './Components/product-list/product-list.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { HomeComponent } from './Components/home/home.component';
 
 
 
@@ -14,7 +16,9 @@ import { ProductListComponent } from './Components/product-list/product-list.com
   declarations: [
     AppComponent,
     FormProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
