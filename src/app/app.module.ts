@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ProductPageComponent } from './Components/product-page/product-page.component';
 
 
 
@@ -18,7 +19,8 @@ import { HomeComponent } from './Components/home/home.component';
     FormProductComponent,
     ProductListComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,

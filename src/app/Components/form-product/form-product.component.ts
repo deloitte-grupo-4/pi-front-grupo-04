@@ -52,7 +52,7 @@ export class FormProductComponent implements OnInit {
 
     this.productService.createProduct(this.product);
 
-    this.router.navigate(['/']);
+    this.router.navigate(['/product-list']);
   }
 
   public sendFormUpdate(){
@@ -66,7 +66,7 @@ export class FormProductComponent implements OnInit {
 
     this.productService.putProducts(this.productUpdate);
 
-    this.router.navigate(['/']);
+    this.router.navigate(['/product-list']);
   }
 
 }

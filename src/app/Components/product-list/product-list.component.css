@@ -1,5 +1,5 @@
 main {
-  margin-top: 2em;
+  margin: 2em;
 }
 
 button a,
@@ -14,7 +14,6 @@ button a:hover {
   margin-top: 4em;
 }
 
-/* LISTA */
 .produto {
   margin-top: 2em;
   padding: 1em;

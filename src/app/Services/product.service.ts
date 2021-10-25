@@ -10,7 +10,7 @@ import { Product } from '../Models/product.model';
 export class ProductService {
 
   @Output() onEditClick:EventEmitter<Product> = new EventEmitter<Product>();
-  
+
   constructor(private http:HttpClient) {}
 
   public createProduct(product:Product):void{
@@ -19,7 +19,7 @@ export class ProductService {
 
 
   public getProducts():Observable<Product[]>{
-    return this.http.get<Product[]>('http://localhost:8080/product');    
+    return this.http.get<Product[]>('http://localhost:8080/product');
   }
 
   public putProducts(product:Product):void {
@@ -34,7 +34,6 @@ export class ProductService {
       this.onEditClick.emit(result);
     });
   }
-
 
   public deleteProduct(productId:number | undefined):void {
     this.http.delete(`http://localhost:8080/product/${productId}`).subscribe();

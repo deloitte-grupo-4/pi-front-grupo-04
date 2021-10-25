@@ -1,0 +1,110 @@
+main {
+  margin: 2em 0;
+}
+
+.breadcrumb {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb-item a{
+  color: var(--main);
+  font-weight: 600;
+}
+
+.active {
+  color: var(--light-gray);
+  font-weight: 600;
+}
+
+
+.product {
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  margin: 1.5em 0 3em 0;
+}
+
+.img-principal {
+  width: 470px;
+  height: 470px;
+}
+
+.product-box {
+  width: 540px;
+  height: 350px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 20px 2px rgba(0, 0, 0, 0.1);
+  padding: 1.5em 2em;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.product-box div {
+  margin-bottom: 10px;
+}
+
+.product-box p:first-of-type {
+  margin-bottom: 15px;
+}
+
+.product-box h3 {
+  font-size: 24px;
+  font-weight: 900;
+  width: 70%;
+}
+
+.sizes span, .qtd span {
+  margin-top: none;
+  background-color: #f0f0f0;
+  color: var(--gray);
+  padding: .5em 1.8em;
+  margin-right: 10px;
+}
+
+.sizes .selected {
+  background-color: var(--main);
+  color: #fff;
+}
+
+.qtd span:first-of-type,
+.qtd span:last-of-type {
+  background-color: #f0f0f0;
+  color: var(--gray);
+  padding: .5em 1em;
+}
+
+.product-info button {
+  margin-top: 1.8em;
+  width: 250px;
+  align-self: center;
+  background-color: var(--main);
+  color: #fff;
+  font-size: 18px;
+}
+
+.product-info a {
+  margin-top: 8px;
+  color: var(--main);
+  text-align: center;
+  font-size: 16px;
+  color: var(--gray);
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 28px;
+  margin-bottom:  15px;
+}

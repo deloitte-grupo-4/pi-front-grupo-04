@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<main>
+  <section class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">home</a></li>
+            <li class="breadcrumb-item"><a href="#">séries</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{product.name}}</li>
+          </ol>
+        </nav>
+  </section>
+  <section class="container">
+      <div class="product">
+          <div><img src="https://img.elo7.com.br/product/zoom/215406F/camiseta-friends-serie-de-tv-comedia-camisa-masculina-camiseta-masculina.jpg" class="img-principal"></div>
+         <div class="product-info">
+
+           <div  class="product-box">
+               <div>
+                   <h3>{{product.name}}</h3>
+                   <p>R$ {{product.price}}</p>
+               </div>
+               <div>
+                   <p>Tamanho:</p>
+                   <div class="sizes">
+                       <span>P</span>
+                       <span>M</span>
+                       <span>G</span>
+                       <span class="selected">GG</span>
+                   </div>
+               </div>
+               <div>
+                   <p>Quantidade:</p>
+                   <div class="qtd">
+                       <span>-</span>
+                       <span class="number">1</span>
+                       <span>+</span>
+                   </div>
+               </div>
+             </div>
+             <button class="btn btn-default">Adicionar ao carrinho</button>
+             <a href="#">Adicionar aos favoritos</a>
+         </div>
+      </div>
+  </section>
+  <section class="container">
+      <h2>você também pode gostar</h2>
+      <div class="imgs">
+           <img src="../../../assets/img/img2.png">
+           <img src="../../../assets/img/img2.png">
+           <img src="../../../assets/img/img2.png">
+           <img src="../../../assets/img/img2.png">
+       </div>
+  </section>
+</main>
