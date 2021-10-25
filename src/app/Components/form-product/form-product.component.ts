@@ -15,9 +15,23 @@ export class FormProductComponent implements OnInit {
   constructor(private productService:ProductService, private router:Router) { }
 
   ngOnInit(): void {
-    this.productService.onEditClick.subscribe(resp =>
-    this.productUpdate = resp
-  )}
+    this.productService.onEditClick.subscribe(resp => {
+
+      this.productUpdate = resp;
+  
+        this.name = resp.name;
+        this.category = resp.category;
+        this.price = resp.price;
+        this.description = resp.description;
+        this.quantity = resp.quantity;
+        this.type = resp.type;
+        this.size = resp.size;
+
+    })
+
+    
+
+  }
 
   product?:Product;
 
@@ -54,6 +68,8 @@ export class FormProductComponent implements OnInit {
     this.productUpdate.size = this.size;
     
     this.productService.putProducts(this.productUpdate);
+
+    this.router.navigate(['/']);
   }
 
 }
