@@ -21,8 +21,8 @@
     </div>
   </div>
 
-  <section class="container">
-    <div class="product" *ngFor = "let product of products">
+  <section class="container" *ngFor = "let product of products">
+    <div class="product">
       <div class="product-img">
         <img src="../../../assets/img/img1.png">
       </div>
@@ -36,7 +36,7 @@
               </p>
         </div>
         <div class="product-info">
-           <select>
+           <select [(ngModel)] = "product.size" (change) = "updateSize()">
             <option *ngFor="let size of validSizes" value={{size}} [selected]="product.size == size">{{size}}</option>
           </select>
 
@@ -48,14 +48,15 @@
         </div>
       </div>
     </div>
+    <hr/>
   </section>
 
 
   <section class="container">
     <div class="prices">
-      <p>Subtotal: R$123</p>
+      <p>Subtotal: R${{total}}</p>
       <p>Desconto: R$00.00</p>
-      <p>Total: R$123 </p>
+      <p>Total: R${{total}} </p>
     </div>
     <div class="btn-submit">
       <button type="button" class="btn btn-default">Finalizar pedido</button>
