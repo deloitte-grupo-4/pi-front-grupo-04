@@ -11,6 +11,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
+import { SigninComponent } from './Components/signin/signin.component';
+
 
 
 
@@ -22,7 +24,8 @@ import { CartPageComponent } from './Components/cart-page/cart-page.component';
     HeaderComponent,
     HomeComponent,
     ProductPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

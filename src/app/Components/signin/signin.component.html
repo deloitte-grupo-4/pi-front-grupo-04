@@ -1,0 +1,32 @@
+<h4 class="text-center">Login</h4>
+
+<form class="form mt-4" (submit)="login()">
+
+    <div class="form-group">
+        <input name="email"
+            id="email"
+            class="form-control" 
+            placeholder="email" 
+            autofocus 
+            [(ngModel)]="email">
+    </div>
+    {{email}}
+
+    <div class="form-group">
+        <input name="pass"
+            id="pass" 
+            type="password" 
+            class="form-control" 
+            placeholder="password" 
+            [(ngModel)]="pass">              
+    </div>
+
+    <button 
+        type="submit" 
+        class="btn btn-primary btn-block">
+        login
+    </button>
+
+</form>
+
+<p>Not a user?<a>Register now</a></p>

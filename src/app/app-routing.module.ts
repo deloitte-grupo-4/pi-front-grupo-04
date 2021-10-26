@@ -5,6 +5,7 @@ import { FormProductComponent } from './Components/form-product/form-product.com
 import { HomeComponent } from './Components/home/home.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
+import { SigninComponent } from './Components/signin/signin.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,9 @@ const routes: Routes = [
     },
     {
       path: 'shopping-cart', component: CartPageComponent
+    },
+    {
+      path: 'login', component: SigninComponent
     }
 
 ];
