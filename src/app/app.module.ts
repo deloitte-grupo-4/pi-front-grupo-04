@@ -10,6 +10,7 @@ import { ProductListComponent } from './Components/product-list/product-list.com
 import { HeaderComponent } from './Components/header/header.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
+import { CartPageComponent } from './Components/cart-page/cart-page.component';
 
 
 
@@ -20,7 +21,8 @@ import { ProductPageComponent } from './Components/product-page/product-page.com
     ProductListComponent,
     HeaderComponent,
     HomeComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,

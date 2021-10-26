@@ -109,6 +109,7 @@ main {
   text-align: center;
   font-size: 16px;
   color: var(--gray);
+  font-weight: 600;
 }
 
 h2 {
@@ -116,4 +117,15 @@ h2 {
   color: var(--gray);
   font-size: 28px;
   margin-bottom:  15px;
+}
+
+.imgs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.imgs img {
+  width: 260px;
+  height: 300px;
 }
