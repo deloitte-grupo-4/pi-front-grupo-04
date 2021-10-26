@@ -1,5 +1,11 @@
 main {
-  margin-top: 4em;
+  margin: 4em auto;
+  width: 60%;
+}
+
+
+p {
+  font-weight: 600;
 }
 
 .progress-line {
@@ -23,7 +29,7 @@ main {
 .progress-text {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   grid-column: 1/7;
 }
 
@@ -43,7 +49,7 @@ main {
 
 .product {
   display: flex;
-  margin: 4em 5em;
+  margin: 4em auto;
 }
 
 .product-wrapper {
@@ -68,6 +74,17 @@ h2 {
   margin-right: 50px;
 }
 
+.price-delete {
+  display: flex;
+  gap: 15px;
+}
+
+.price-delete span{
+  color: var(--gray);
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .product-info {
   display: flex;
   margin-top: 30px;
@@ -77,6 +94,8 @@ h2 {
 
 select {
   padding: 8px;
+  cursor: pointer;
+
 }
 
 .quantity {
@@ -90,4 +109,32 @@ select {
 .quantity button {
   border: none;
   margin: 0 5px;
+  cursor: pointer;
+}
+
+hr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.prices {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-weight: 500;
+  margin: 45px 45px 0 10px;
+}
+
+.prices p:last-of-type {
+  font-weight: 900;
+}
+
+.btn-submit button {
+  display: flex;
+  background-color: var(--main);
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 0 auto;
 }
