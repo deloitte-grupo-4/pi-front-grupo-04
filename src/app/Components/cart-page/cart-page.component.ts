@@ -39,5 +39,11 @@ export class CartPageComponent implements OnInit {
     }
   }
 
+  deleteProduct(product:CartProduct){
+    this.products = this.products.filter(item => {
+      item != product
+    })
+    localStorage.setItem("estampas_products", JSON.stringify(this.products))
+  }
 
 }

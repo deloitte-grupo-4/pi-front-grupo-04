@@ -30,7 +30,7 @@
         <div class="name-price">
           <h2>{{product.name}}</h2>
               <p class="price-delete">{{product.quantity}}x R${{product.price}}
-                <span class="material-icons">
+                <span class="material-icons" (click)="deleteProduct(product)">
                   clear
                 </span>
               </p>
