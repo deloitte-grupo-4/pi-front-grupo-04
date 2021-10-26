@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartProduct } from './../../Models/cartProduct.model';
+
 
 @Component({
   selector: 'app-cart-page',
@@ -6,20 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
+  products:CartProduct[] = [];
+  validSizes:string[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    let savedCart = localStorage.getItem("estampas_products");
+
+    if(savedCart){
+      this.products = JSON.parse(savedCart);
+    }
+
+    this.validSizes = ['P', 'M', 'G', 'GG']
   }
 
-  price = 19.99;
-  quantity = 2;
-  clickIncrease(){
-    this.quantity++;
+  clickIncrease(product:CartProduct){
+    if(!product.quantity){
+      product.quantity = 1
+    } else {
+      product.quantity++;
+    }
   }
 
-  clickDecrease(){
-    this.quantity <= 0 ? this.quantity = 0 : this.quantity--;
+  clickDecrease(product:CartProduct){
+    if(!product.quantity){
+      product.quantity = 1
+    } else {
+      product.quantity <= 0 ? product.quantity = 0 : product.quantity--;
+    }
   }
 
 
