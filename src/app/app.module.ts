@@ -12,6 +12,11 @@ import { HomeComponent } from './Components/home/home.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { SigninComponent } from './Components/signin/signin.component';
+import { AuthenticationComponent } from './Components/authentication/authentication.component';
+import { MainComponent } from './Components/main/main.component';
+import { AuthenticationGuard } from './auth/authentication.guard';
+
+
 
 
 
@@ -25,7 +30,9 @@ import { SigninComponent } from './Components/signin/signin.component';
     HomeComponent,
     ProductPageComponent,
     CartPageComponent,
-    SigninComponent
+    SigninComponent,
+    AuthenticationComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,9 @@ import { SigninComponent } from './Components/signin/signin.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
