@@ -25,8 +25,10 @@ export class ProductPageComponent implements OnInit {
     {name:'GG', active:true},
   ];
 
-  toggleClass(size:any){
-    size.active = !size.active;
+  toggleClass(selectedSize:any){
+    for(let size of this.sizes){
+      size == selectedSize ? size.active = true : size.active = false;
+    }
   }
 
   quantity = 2;

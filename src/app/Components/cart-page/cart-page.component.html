@@ -22,22 +22,32 @@
   </div>
 
   <section class="container">
-    <article class="product-wrapper">
+    <div class="product">
       <div class="product-img">
         <img src="../../../assets/img/img1.png">
       </div>
-      <div class="product-info">
-        <h2>Camisa Dunder Mifflin Paper Company</h2>
-        <select>
-          <option value="default" selected>Tamanho - G</option>
-          <option value="p">P</option>
-          <option value="m">M</option>
-          <option value="g">G</option>
-          <option value="gg">GG</option>
-        </select>
-      </div>
-    </article>
+      <div class="product-wrapper">
+        <div class="name-price">
+          <h2>Camisa Dunder Mifflin Paper Company</h2>
+              <p><span>{{quantity}}</span>x R${{price}}</p>
+        </div>
+        <div class="product-info">
+          <select>
+            <option value="default" selected>Tamanho - G</option>
+            <option value="p">P</option>
+            <option value="m">M</option>
+            <option value="g">G</option>
+            <option value="gg">GG</option>
+          </select>
 
+          <div class="quantity">
+            <button (click) = clickDecrease()>-</button>
+            <span>{{quantity}}</span>
+            <button (click) = clickIncrease()>+</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 </main>

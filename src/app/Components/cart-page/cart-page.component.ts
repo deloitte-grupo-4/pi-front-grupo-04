@@ -12,4 +12,15 @@ export class CartPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  price = 19.99;
+  quantity = 2;
+  clickIncrease(){
+    this.quantity++;
+  }
+
+  clickDecrease(){
+    this.quantity <= 0 ? this.quantity = 0 : this.quantity--;
+  }
+
+
 }
