@@ -17,6 +17,7 @@ import { MainComponent } from './Components/main/main.component';
 import { AuthenticationGuard } from './auth/authentication.guard';
 import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
 import { ConfirmationPageComponent } from './Components/confirmation-page/confirmation-page.component';
+import { ProgressBarComponent } from './Components/progress-bar/progress-bar.component';
 
 
 
@@ -36,7 +37,8 @@ import { ConfirmationPageComponent } from './Components/confirmation-page/confir
     AuthenticationComponent,
     MainComponent,
     PaymentPageComponent,
-    ConfirmationPageComponent
+    ConfirmationPageComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

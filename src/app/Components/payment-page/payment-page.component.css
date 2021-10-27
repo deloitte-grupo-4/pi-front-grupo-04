@@ -8,49 +8,6 @@ p {
   font-weight: 600;
 }
 
-.progress-line {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  grid-column: 1/7;
-}
-
-.progress-icons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-content: center;
-  color: var(--main);
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.progress-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  grid-column: 1/7;
-}
-
-.progress-text span:nth-of-type(2) {
-    margin-left: 30px;
-}
-
-.material-icons {
-  font-size: 36px;
-}
-
-.line {
-  width: 350px;
-  height: 2px;
-  background-color: var(--light-gray);
-}
-
-.pointer {
-  cursor: pointer;
-}
-
 section {
   padding: 3em 50px;
 }
