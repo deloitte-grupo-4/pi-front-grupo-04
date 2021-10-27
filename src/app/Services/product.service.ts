@@ -35,6 +35,11 @@ export class ProductService {
     });
   }
 
+  public getProductByID(productID:number):Observable<Product> {
+    let obs = this.http.get<Product>(`http://localhost:8080/product/${productID}`);
+    return obs
+  }
+
   public deleteProduct(productId:number | undefined):void {
     this.http.delete(`http://localhost:8080/product/${productId}`).subscribe();
     console.log(productId);
