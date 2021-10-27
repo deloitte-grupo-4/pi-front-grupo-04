@@ -10,25 +10,25 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="cep">CEP:</label>
-            <input type="text" class="form-control" id="cep" name="cep">
+            <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" (blur) = "findCEP()" [(ngModel)]="cep.cep">
           </div>
           <div class="form-group col-md-8">
             <label for="rua">Endereço:</label>
-            <input type="text" class="form-control" id="rua" name="rua">
+            <input type="text" class="form-control" id="rua" name="rua"  [(ngModel)]="cep.logradouro">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-2">
             <label for="rua">Número:</label>
-            <input type="text" class="form-control" id="numero" name="numero">
+            <input type="text" class="form-control" id="numero" name="numero"  [(ngModel)]="cep.numero">
           </div>
           <div class="form-group col-md-6">
             <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" name="cidade">
+            <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="cep.cidade">
           </div>
           <div class="form-group col-md-4">
             <label for="estado">Estado:</label>
-            <input type="text" class="form-control" id="estado" name="estado">
+            <input type="text" class="form-control" id="estado" name="estado"  [(ngModel)]="cep.estado">
           </div>
         </div>
       </div>

@@ -18,10 +18,7 @@ import { AuthenticationGuard } from './auth/authentication.guard';
 import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
 import { ConfirmationPageComponent } from './Components/confirmation-page/confirmation-page.component';
 import { ProgressBarComponent } from './Components/progress-bar/progress-bar.component';
-
-
-
-
+import { CepService } from './Services/cep.service';
 
 
 @NgModule({
@@ -47,7 +44,8 @@ import { ProgressBarComponent } from './Components/progress-bar/progress-bar.com
     HttpClientModule
   ],
   providers: [
-    AuthenticationGuard
+    AuthenticationGuard,
+    CepService
   ],
   bootstrap: [AppComponent]
 })
