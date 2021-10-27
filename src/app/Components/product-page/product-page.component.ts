@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/Models/product.model';
 import { ProductService } from 'src/app/Services/product.service';
+import {Router} from "@angular/router"
+import { Observable, observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-product-page',
@@ -10,12 +14,16 @@ import { ProductService } from 'src/app/Services/product.service';
 export class ProductPageComponent implements OnInit {
   product: Product = new Product();
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.productService.onEditClick.subscribe((product: Product) => {
-      this.product = product;
-    })
+    let id:any = this.route.snapshot.paramMap.get('id')
+    if(id) {
+      id = parseInt(id);
+      this.productService.getProductByID(id).subscribe(product => {this.product = product}, error => this.router.navigate(['/']))
+    } else {
+      this.router.navigate(['/'])
+    }
   }
 
   sizes = [

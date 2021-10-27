@@ -14,7 +14,7 @@
 <section class="container">
   <h2>mais vendidos</h2>
   <div class="imgs" *ngFor = "let product of products">
-     <a routerLink="/product" (click) = "sendProduct(product)"> {{product.name}} </a>
+     <a [routerLink]="['/product', { id: product.id }]"> {{product.name}} </a>
   </div>
 </section>
 <section class="container">
