@@ -1,0 +1,43 @@
+
+main {
+  margin: 4em auto 0 auto;
+  width: 60%;
+}
+
+p {
+  font-weight: 600;
+}
+
+section {
+  padding: 3em 50px;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 22px;
+}
+
+select {
+  padding: 5px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.address {
+  margin-bottom: 30px;
+}
+
+.btn-submit button {
+  display: flex;
+  background-color: var(--main);
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 2.5em auto 0 auto;
+}
+

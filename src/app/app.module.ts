@@ -15,6 +15,9 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { AuthenticationComponent } from './Components/authentication/authentication.component';
 import { MainComponent } from './Components/main/main.component';
 import { AuthenticationGuard } from './auth/authentication.guard';
+import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
+import { ConfirmationPageComponent } from './Components/confirmation-page/confirmation-page.component';
+import { ProgressBarComponent } from './Components/progress-bar/progress-bar.component';
 
 
 
@@ -32,7 +35,10 @@ import { AuthenticationGuard } from './auth/authentication.guard';
     CartPageComponent,
     SigninComponent,
     AuthenticationComponent,
-    MainComponent
+    MainComponent,
+    PaymentPageComponent,
+    ConfirmationPageComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

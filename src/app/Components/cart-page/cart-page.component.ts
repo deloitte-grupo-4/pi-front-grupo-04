@@ -30,7 +30,9 @@ export class CartPageComponent implements OnInit {
     } else {
       product.quantity++;
     }
-    this.calculateTotal()
+    this.calculateTotal();
+    this.updateLocalStorage();
+
   }
 
   clickDecrease(product:CartProduct){
@@ -39,7 +41,8 @@ export class CartPageComponent implements OnInit {
     } else {
       product.quantity <= 1 ? product.quantity = 1 : product.quantity--;
     }
-    this.calculateTotal()
+    this.calculateTotal();
+    this.updateLocalStorage();
   }
 
   deleteProduct(product:CartProduct){
@@ -51,7 +54,7 @@ export class CartPageComponent implements OnInit {
 
   }
 
-  updateSize(){
+  updateLocalStorage(){
     localStorage.setItem("estampas_products", JSON.stringify(this.products));
   }
 
