@@ -15,6 +15,7 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { AuthenticationComponent } from './Components/authentication/authentication.component';
 import { MainComponent } from './Components/main/main.component';
 import { AuthenticationGuard } from './auth/authentication.guard';
+import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
 
 
 
@@ -32,7 +33,8 @@ import { AuthenticationGuard } from './auth/authentication.guard';
     CartPageComponent,
     SigninComponent,
     AuthenticationComponent,
-    MainComponent
+    MainComponent,
+    PaymentPageComponent
   ],
   imports: [
     BrowserModule,

@@ -6,15 +6,17 @@ import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { FormProductComponent } from './Components/form-product/form-product.component';
 import { HomeComponent } from './Components/home/home.component';
 import { MainComponent } from './Components/main/main.component';
+import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
 import { SigninComponent } from './Components/signin/signin.component';
+
 
 const routes: Routes = [
 
     {
 
-      
+
       path: '', component: MainComponent,
       children: [
         {
@@ -31,10 +33,13 @@ const routes: Routes = [
         },
         {
           path: 'shopping-cart', component: CartPageComponent
+        },
+        {
+          path: 'payment', component: PaymentPageComponent
         }
-        
+
       ],
-      canActivate: [AuthenticationGuard]
+      // canActivate: [AuthenticationGuard]
     },
     {
       path: '', component: AuthenticationComponent,
