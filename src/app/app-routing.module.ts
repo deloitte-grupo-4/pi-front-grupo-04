@@ -43,7 +43,7 @@ const routes: Routes = [
         }
 
       ],
-      // canActivate: [AuthenticationGuard]
+       canActivate: [AuthenticationGuard]
     },
     {
       path: '', component: AuthenticationComponent,
