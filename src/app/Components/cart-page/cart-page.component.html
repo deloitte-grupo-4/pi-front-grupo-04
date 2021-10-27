@@ -21,77 +21,42 @@
     </div>
   </div>
 
-  <section class="container">
+  <section class="container" *ngFor = "let product of products">
     <div class="product">
       <div class="product-img">
         <img src="../../../assets/img/img1.png">
       </div>
       <div class="product-wrapper">
         <div class="name-price">
-          <h2>Camisa Dunder Mifflin Paper Company</h2>
-              <p class="price-delete">{{quantity}}x R${{price}}
-                <span class="material-icons">
-                  clear
-                </span>
-              </p>
-
-        </div>
-        <div class="product-info">
-          <select>
-            <option value="default" selected>Tamanho: G</option>
-            <option value="p">P</option>
-            <option value="m">M</option>
-            <option value="g">G</option>
-            <option value="gg">GG</option>
-          </select>
-
-          <div class="quantity">
-            <button (click) = clickDecrease()>-</button>
-            <span>{{quantity}}</span>
-            <button (click) = clickIncrease()>+</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr/>
-
-    <div class="product">
-      <div class="product-img">
-        <img src="../../../assets/img/img1.png">
-      </div>
-      <div class="product-wrapper">
-        <div class="name-price">
-          <h2>Camisa Dunder Mifflin Paper Company</h2>
-              <p class="price-delete">{{quantity}}x R${{price}}
-                <span class="material-icons">
+          <h2>{{product.name}}</h2>
+              <p class="price-delete">{{product.quantity}}x R${{product.price}}
+                <span class="material-icons" (click)="deleteProduct(product)">
                   clear
                 </span>
               </p>
         </div>
         <div class="product-info">
-          <select>
-            <option value="default" selected>Tamanho: G</option>
-            <option value="p">P</option>
-            <option value="m">M</option>
-            <option value="g">G</option>
-            <option value="gg">GG</option>
+           <select [(ngModel)] = "product.size" (change) = "updateSize()">
+            <option *ngFor="let size of validSizes" value={{size}} [selected]="product.size == size">{{size}}</option>
           </select>
 
           <div class="quantity">
-            <button (click) = clickDecrease()>-</button>
-            <span>{{quantity}}</span>
-            <button (click) = clickIncrease()>+</button>
+            <button (click) = clickDecrease(product)>-</button>
+            <span>{{product.quantity}}</span>
+            <button (click) = clickIncrease(product)>+</button>
           </div>
         </div>
       </div>
     </div>
     <hr/>
   </section>
+
+
   <section class="container">
     <div class="prices">
-      <p>Subtotal: R${{(price * quantity).toFixed(2)}}</p>
+      <p>Subtotal: R${{total}}</p>
       <p>Desconto: R$00.00</p>
-      <p>Total: R${{(price * quantity).toFixed(2)}} </p>
+      <p>Total: R${{total}} </p>
     </div>
     <div class="btn-submit">
       <button type="button" class="btn btn-default">Finalizar pedido</button>
