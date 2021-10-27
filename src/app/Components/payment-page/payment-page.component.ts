@@ -18,7 +18,13 @@ export class PaymentPageComponent implements OnInit {
   findCEP(){
     if(this.cep.cep){
       this.cepService.findCEP(this.cep.cep)
-      .then((cep:Cep) => this.cep = cep);
+      .then((cep:Cep) => this.cep = cep)
+      .catch(()=> {
+        let cep = this.cep.cep;
+        this.cep = new Cep();
+        this.cep.cep = cep;
+        alert("Não foi possível encontrar o CEP")
+      })
     }
   }
 }
