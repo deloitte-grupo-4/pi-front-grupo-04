@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationGuard } from './auth/authentication.guard';
 import { AuthenticationComponent } from './Components/authentication/authentication.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
+import { ConfirmationPageComponent } from './Components/confirmation-page/confirmation-page.component';
 import { FormProductComponent } from './Components/form-product/form-product.component';
 import { HomeComponent } from './Components/home/home.component';
 import { MainComponent } from './Components/main/main.component';
@@ -36,6 +37,9 @@ const routes: Routes = [
         },
         {
           path: 'payment', component: PaymentPageComponent
+        },
+        {
+          path: 'confirmation', component: ConfirmationPageComponent
         }
 
       ],
