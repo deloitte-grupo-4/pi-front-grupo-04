@@ -20,6 +20,10 @@ import { SignupComponent } from './Components/signup/signup.component';
 
 
 
+import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
+import { ConfirmationPageComponent } from './Components/confirmation-page/confirmation-page.component';
+import { ProgressBarComponent } from './Components/progress-bar/progress-bar.component';
+import { CepService } from './Services/cep.service';
 
 
 @NgModule({
@@ -34,7 +38,10 @@ import { SignupComponent } from './Components/signup/signup.component';
     SigninComponent,
     AuthenticationComponent,
     MainComponent,
-    SignupComponent
+    SignupComponent,
+    PaymentPageComponent,
+    ConfirmationPageComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { SignupComponent } from './Components/signup/signup.component';
     HttpClientModule
   ],
   providers: [
-    AuthenticationGuard
+    AuthenticationGuard,
+    CepService
   ],
   bootstrap: [AppComponent]
 })

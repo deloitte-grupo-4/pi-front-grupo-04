@@ -9,9 +9,10 @@
       <div class="form-group">
           <label for="category">Categoria:</label>
           <select class="custom-select" id="category" name="category"[(ngModel)]="category">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+              <option value="series">Séries</option>
+              <option value="bandas">Bandas</option>
+              <option value="filmes">Filmes</option>
+              <option value="games">Games</option>
             </select>
         </div>
         <div class="form-group">
@@ -38,7 +39,7 @@
         </div>
 
       <p>
-        <button type="submit" class="btn btn-primary" (click)=sendForm()>Enviar</button>        
+        <button type="submit" class="btn btn-primary" (click)=sendForm()>Enviar</button>
       </p>
 
       <button type="submit" class="btn btn-primary" (click)=sendFormUpdate()>Atualizar</button>

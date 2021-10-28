@@ -1,0 +1,25 @@
+
+main {
+  margin: 4em auto;
+  width: 60%;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2, p {
+  color: var(--gray)
+}
+
+img {
+  margin-top: 6em;
+  width:100px;
+}
+
+a {
+  color: var(--main)
+}
