@@ -9,25 +9,26 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  
+
   email?:string;
   pass?:string;
-  // user:User = new User();
+  user?:any
+  //user:User = new User();
 
   constructor(private userService: UserService, private router:Router) { }
 
   ngOnInit(): void {
-    
+
   }
 
-  // public login(){
-  //     this.user.email = this.email;
-  //     this.user.pass = this.pass;
-  //     this.userService.login(this.user);
+  public login(){
+       this.user.email = this.email;
+       this.user.pass = this.pass;
+       this.userService.login(this.user);
 
-  //     this.router.navigate(['']);
-  // }
+       this.router.navigate(['']);
+   }
 
- 
+
 
 }

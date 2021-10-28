@@ -1,0 +1,56 @@
+main {
+  margin: 3em auto 0 auto;
+  width: 40%;
+  border: 1px solid rgb(196, 196, 196);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+input, button, p {
+  margin: 0 auto;
+  width: 350px;
+}
+
+p {
+  color: var(--gray);
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+a {
+  color: var(--main);
+}
+
+button {
+  margin-top: 15px;
+  background-color: var(--main);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin: 0 auto;
+}
+
+label {
+  margin: 6px 0 0 100px;
+  color: var(--gray)
+}
+
+.controles {
+  display: flex;
+  flex-direction: column
+}
+
+a {
+  margin: 5px auto;
+}

@@ -1,32 +1,31 @@
-<!-- <h4 class="text-center">Login</h4>
-
-<form class="form mt-4" (submit)="login()">
-
+<app-header></app-header>
+<main>
+  <h1 class="text-center">Login</h1>
+  <form class="form mt-4" (submit)="login()">
     <div class="form-group">
-        <input name="email"
-            id="email"
-            class="form-control" 
-            placeholder="email" 
-            autofocus 
-            [(ngModel)]="email">
+      <input
+        name="email"
+        id="email"
+        class="form-control"
+        placeholder="E-mail"
+        autofocus
+        [(ngModel)]="email"
+      />
     </div>
-    {{email}}
-
+    {{ email }}
     <div class="form-group">
-        <input name="pass"
-            id="pass" 
-            type="password" 
-            class="form-control" 
-            placeholder="password" 
-            [(ngModel)]="pass">              
+      <input
+        name="pass"
+        id="pass"
+        type="password"
+        class="form-control"
+        placeholder="Senha"
+        [(ngModel)]="pass"
+      />
     </div>
+    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+  </form>
 
-    <button 
-        type="submit" 
-        class="btn btn-primary btn-block">
-        login
-    </button>
+  <p>Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a></p>
 
-</form>
-
-<p>Not a user?<a>Register now</a></p> -->
+</main>

@@ -14,7 +14,6 @@ export class SignupComponent implements OnInit {
   name?:string;
   surname?:string;
   email?:string;
-  username?:string;
   pass?:string;
   conf?:string;
 

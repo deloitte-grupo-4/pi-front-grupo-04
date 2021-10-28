@@ -1,35 +1,35 @@
+<app-header></app-header>
 <main>
-    <form 
+  <h1 class="text-center">Cadastre-se</h1>
+
+    <form
         #register="ngForm"
         (ngSubmit)="onSubmit(register.value)"
+        class="form mt-4"
     >
-        <label>
-            Nome
-            <input type="text" name="name" id="name" ngModel>
-        </label>
-        <label>
-            Sobrenome
-            <input type="text" name="surname" id="surname" ngModel>
-        </label>
-        <label>
-            E-mail
-            <input type="email" name="email" id="email" ngModel>
-        </label>
-        <label>
-            Usuário
-            <input type="text" name="username" id="username" ngModel>
-        </label>
-        <label>
-            Senha
-            <input type="password" name="pass" id="pass" ngModel>
-        </label>
-        <label>
-            Confirmação de Senha
-            <input type="password" name="conf" id="conf">
-        </label>
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Digite o seu nome" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="surname">Sobrenome:</label>
+        <input type="text" name="surname" id="surname" class="form-control" placeholder="Digite o seu sobrenome" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="email"> E-mail:</label>
+      <input type="email" name="email" id="email" class="form-control"placeholder="Digite o seu email" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="pass">Senha</label>
+      <input type="password" name="pass" id="pass" class="form-control" placeholder="Digite a sua senha" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="conf">Confirmação de senha: </label>
+      <input type="password" name="conf" id="conf" placeholder="Digite novamente a sua senha" class="form-control">
+    </div>
         <div class="controles">
-            <a routerLink="">Voltar a página inicial</a>
-            <button type="submit">Cadastrar</button>
+          <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+          <a routerLink="/">Voltar a página inicial</a>
         </div>
     </form>
 </main>
