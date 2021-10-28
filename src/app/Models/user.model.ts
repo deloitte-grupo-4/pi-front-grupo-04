@@ -1,5 +1,6 @@
-export class User {
-    id?:number | undefined;
+
+
+export interface User {
     name?:string;
     surname?:string;
     email?:string;

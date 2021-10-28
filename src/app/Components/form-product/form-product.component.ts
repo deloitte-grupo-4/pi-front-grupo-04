@@ -67,6 +67,8 @@ export class FormProductComponent implements OnInit {
     this.productService.putProducts(this.productUpdate);
 
     this.router.navigate(['/product-list']);
+
+    
   }
 
 }

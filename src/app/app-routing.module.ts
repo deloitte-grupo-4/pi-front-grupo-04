@@ -9,12 +9,11 @@ import { MainComponent } from './Components/main/main.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
 import { SigninComponent } from './Components/signin/signin.component';
+import { SignupComponent } from './Components/signup/signup.component';
 
 const routes: Routes = [
 
-    {
-
-      
+    {      
       path: '', component: MainComponent,
       children: [
         {
@@ -31,10 +30,13 @@ const routes: Routes = [
         },
         {
           path: 'shopping-cart', component: CartPageComponent
+        },
+        {
+          path: 'register', component: SignupComponent
         }
         
       ],
-      canActivate: [AuthenticationGuard]
+      // canActivate: [AuthenticationGuard]
     },
     {
       path: '', component: AuthenticationComponent,

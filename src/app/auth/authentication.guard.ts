@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
+interface Response{
+  msg:string,
+  token:string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +26,9 @@ export class AuthenticationGuard implements CanActivate {
       this.router.navigate(['login']);
       return false;
     }
-  }  
+  }
+  
+  
+  
 
 }
