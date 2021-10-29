@@ -76,4 +76,7 @@ export class CartPageComponent implements OnInit {
     this.showModal = true;
   }
 
+  hidingModal(){
+    this.showModal = false;
+  }
 }

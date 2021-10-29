@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/Models/user.model';
 import { UserService } from 'src/app/Services/user.service';
@@ -9,6 +9,7 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./signin-modal.component.css']
 })
 export class SigninModalComponent implements OnInit {
+  @Output() onCancelClick:EventEmitter<null> = new EventEmitter();
 
 
   email?:string;
@@ -17,6 +18,7 @@ export class SigninModalComponent implements OnInit {
   // user:User = new User();
 
   constructor(private userService: UserService, private router:Router) { }
+
 
   ngOnInit(): void {
 
@@ -30,10 +32,8 @@ export class SigninModalComponent implements OnInit {
        this.router.navigate(['']);
   }
 
-  showModal = true;
-
-  hidingModal(){
-    this.showModal = false;
+  cancel(){
+    this.onCancelClick.emit()
   }
 
 }

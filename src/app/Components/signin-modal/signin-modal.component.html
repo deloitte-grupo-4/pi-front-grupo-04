@@ -1,6 +1,6 @@
-<main *ngIf = "showModal">
+<main>
   <div class="modal">
-    <span class="material-icons" (click)=" hidingModal()">
+    <span class="material-icons" (click)=" cancel()">
       close
     </span>
     <h1 class="text-center">Login</h1>
@@ -15,7 +15,6 @@
           [(ngModel)]="email"
         />
       </div>
-      {{ email }}
       <div class="form-group">
         <input
           name="pass"
