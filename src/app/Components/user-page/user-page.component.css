@@ -1,0 +1,15 @@
+main {
+  margin: 3em auto;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 28px;
+}
+
+
+.menu h3 {
+  font-size: 24px;
+  color: var(--light-gray);
+}

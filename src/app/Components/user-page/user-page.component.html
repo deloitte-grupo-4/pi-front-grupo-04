@@ -1,0 +1,17 @@
+<app-header></app-header>
+<main class="container">
+  <h1>Bem vindo, user!</h1>
+  <div class="menu">
+    <h3 (click)="expand()">meus pedidos</h3>
+    <div *ngIf="expandMenu" class="menu-box">
+      <h5>Pedido número #0000</h5>
+      <p>Status: em andamento</p>
+    </div>
+    <h3 (click)="expand()">histórico</h3>
+    <div *ngIf="expandMenu" class="menu-box">
+      <h5>Pedido número #0000</h5>
+      <p>Status: entregue</p>
+      </div>
+    <h3>editar perfil</h3>
+  </div>
+</main>

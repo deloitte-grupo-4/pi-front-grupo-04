@@ -12,12 +12,13 @@ import { ProductListComponent } from './Components/product-list/product-list.com
 import { ProductPageComponent } from './Components/product-page/product-page.component';
 import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
+import { UserPageComponent } from './Components/user-page/user-page.component';
 
 
 const routes: Routes = [
 
-    {      
-    
+    {
+
 
 
       path: '', component: MainComponent,
@@ -45,6 +46,9 @@ const routes: Routes = [
         },
         {
           path: 'confirmation', component: ConfirmationPageComponent
+        },
+        {
+          path: 'profile', component: UserPageComponent
         }
 
       ],

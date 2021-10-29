@@ -25,6 +25,7 @@ import { ConfirmationPageComponent } from './Components/confirmation-page/confir
 import { ProgressBarComponent } from './Components/progress-bar/progress-bar.component';
 import { CepService } from './Services/cep.service';
 import { SigninModalComponent } from './Components/signin-modal/signin-modal.component';
+import { UserPageComponent } from './Components/user-page/user-page.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SigninModalComponent } from './Components/signin-modal/signin-modal.com
     PaymentPageComponent,
     ConfirmationPageComponent,
     ProgressBarComponent,
-    SigninModalComponent
+    SigninModalComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,

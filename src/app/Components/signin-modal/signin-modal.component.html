@@ -1,6 +1,6 @@
 <main>
   <div class="modal">
-    <span class="material-icons" (click)=" cancel()">
+    <span class="material-icons" (click)="cancel()">
       close
     </span>
     <h1 class="text-center">Login</h1>
@@ -25,7 +25,7 @@
           [(ngModel)]="pass"
         />
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      <button type="submit" class="btn btn-primary btn-block" (click)="cancel()">Entrar</button>
     </form>
 
     <p>Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a></p>
