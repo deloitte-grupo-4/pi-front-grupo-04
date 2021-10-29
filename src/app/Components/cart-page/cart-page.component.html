@@ -40,7 +40,8 @@
       <p>Total: R${{total}} </p>
     </div>
     <div class="btn-submit">
-      <button type="button" class="btn btn-default" routerLink = "/payment">Finalizar pedido</button>
+      <button type="button" class="btn btn-default" (click) = "showingModal()">Finalizar pedido</button>
     </div>
   </section>
+  <app-signin-modal *ngIf = "showModal"></app-signin-modal>
 </main>

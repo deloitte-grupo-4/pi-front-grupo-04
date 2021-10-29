@@ -1,0 +1,57 @@
+main {
+  margin: 4em auto 0 auto;
+  width: 80%;
+  border: 1px solid rgb(196, 196, 196);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.modal {
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(199, 199, 199, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 3s linear;
+}
+
+span {
+  color: var(--gray);
+  position: absolute;
+  top: 200px;
+  right: 500px;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 28px;
+}
+
+input, button, p {
+  margin: 0 auto;
+  width: 350px;
+}
+
+p {
+  color: var(--gray);
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+a {
+  color: var(--main);
+}
+
+button {
+  background-color: var(--main);
+}

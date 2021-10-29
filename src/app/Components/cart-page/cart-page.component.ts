@@ -69,4 +69,11 @@ export class CartPageComponent implements OnInit {
       return total + (next.quantity * next.price)
     }, 0)
   }
+
+  showModal = false;
+
+  showingModal(){
+    this.showModal = true;
+  }
+
 }

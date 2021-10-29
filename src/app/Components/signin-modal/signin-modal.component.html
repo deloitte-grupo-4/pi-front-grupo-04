@@ -1,5 +1,8 @@
-<app-header></app-header>
-<main>
+<main *ngIf = "showModal">
+  <div class="modal">
+    <span class="material-icons" (click)=" hidingModal()">
+      close
+    </span>
     <h1 class="text-center">Login</h1>
     <form class="form mt-4" (submit)="login()">
       <div class="form-group">
@@ -28,5 +31,6 @@
 
     <p>Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a></p>
 
+  </div>
 
 </main>
