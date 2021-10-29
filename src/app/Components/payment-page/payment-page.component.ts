@@ -9,7 +9,7 @@ import { CepService } from 'src/app/Services/cep.service';
 })
 export class PaymentPageComponent implements OnInit {
   cep = new Cep();
-
+  selectedValue = 'boleto'
   constructor(private cepService:CepService) { }
 
   ngOnInit(): void {

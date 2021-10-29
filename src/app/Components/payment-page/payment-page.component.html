@@ -35,12 +35,39 @@
 
       <div class="payment-method">
         <h2>Método de pagamento:</h2>
-        <select>
-          <option value="credito">Cartão de crédito (na entrega)</option>
-          <option value="debito">Cartão de débito (na entrega)</option>
-          <option value="presente">Cartão presente</option>
-          <option value="boleto">Boleto</option>
-        </select>
+        <form>
+          <select [(ngModel)] = "selectedValue" name="selectedValue">
+            <option value="boleto" name="boleto">Boleto</option>
+            <option value="credito" name="credito">Cartão de crédito</option>
+            <option value="debito" name="debito">Cartão de débito</option>
+          </select>
+        </form>
+      </div>
+      <div *ngIf="selectedValue != 'boleto'">
+        <div class="card-payment">
+          <h3>Dados do cartão</h3>
+          <div class="form-row">
+            <div class="form-group col-md-12  left-addon">
+              <span class="material-icons">
+                payment
+                </span>
+              <input type="text" class="form-control" placeholder="Número do cartão">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <input type="text"  class="form-control" placeholder="Nome no cartão">
+            </div>
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" placeholder="MM/AA">
+            </div>
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" placeholder="CVV">
+            </div>
+          </div>
+        </div>
+
+
       </div>
       <div class="btn-submit">
         <button type="submit" class="btn btn-default" routerLink = "/confirmation">Finalizar compra</button>

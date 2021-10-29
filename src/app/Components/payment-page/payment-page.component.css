@@ -18,6 +18,14 @@ h2 {
   font-size: 22px;
 }
 
+h3 {
+  margin-top: 30px;
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 18px;
+}
+
+
 select {
   padding: 5px;
 }
@@ -39,5 +47,25 @@ label {
   padding: 10px 20px;
   border-radius: 10px;
   margin: 2.5em auto 0 auto;
+}
+
+.card-payment {
+  margin-top: 1em;
+}
+
+.left-addon {
+  position: relative;
+}
+
+.left-addon span {
+  position: absolute;
+  left: 0px;
+  padding: 9px;
+  pointer-events: none;
+  color: var(--gray);
+}
+
+.left-addon input {
+  padding-left: 32px;
 }
 
