@@ -1,29 +1,45 @@
 <app-header></app-header>
 <main>
-<section class="container">
-  <div class="banner">
-      <div class="img-principal ">
-          <img src="../../../assets//img/cartoon.jpg" class="animate__animated animate__fadeInLeft">
+  <section class="container">
+    <div class="banner">
+      <div class="img-principal">
+        <img
+          src="../../../assets//img/cartoon.jpg"
+          class="animate__animated animate__fadeInLeft"
+        />
       </div>
-      <div class="img-secundaria " >
-          <img src="../../../assets/img/coding.jfif" class="animate__animated animate__fadeInRight animate__delay-1s">
-          <div class="texto-promo animate__animated animate__fadeInRight animate__delay-2s"> Camisetas a partir de R$19,90! </div>
+      <div class="img-secundaria">
+        <img
+          src="../../../assets/img/coding.jfif"
+          class="animate__animated animate__fadeInRight animate__delay-1s"
+        />
+        <div
+          class="
+            texto-promo
+            animate__animated animate__fadeInRight animate__delay-2s
+          "
+        >
+          Camisetas a partir de R$19,90!
+        </div>
       </div>
-  </div>
-</section>
-<section class="container">
-  <h2>mais vendidos</h2>
-  <div class="imgs" *ngFor = "let product of products">
-     <a [routerLink]="['/product', { id: product.id }]"> {{product.name}} </a>
-  </div>
-</section>
-<section class="container">
-  <h2>coleção 2021</h2>
-  <div class="imgs">
-      <img src="../../../assets/img/img2.png">
-      <img src="../../../assets/img/img2.png">
-      <img src="../../../assets/img/img2.png">
-      <img src="../../../assets/img/img2.png">
-  </div>
-</section>
+    </div>
+  </section>
+  <section class="container">
+    <h2>mais vendidos</h2>
+    <div class="imgs" *ngFor="let product of products">
+      <a [routerLink]="['/product', { id: product.id }]">
+        {{ product.name }}
+      </a>
+    </div>
+  </section>
+  <section class="container">
+    <h2>coleção 2021</h2>
+    <div class="imgs">
+      <img src="../../../assets/img/img2.png" />
+      <img src="../../../assets/img/img2.png" />
+      <img src="../../../assets/img/img2.png" />
+      <img src="../../../assets/img/img2.png" />
+    </div>
+  </section>
+  <app-footer></app-footer>
 </main>
