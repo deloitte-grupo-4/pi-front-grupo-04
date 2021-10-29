@@ -18,7 +18,7 @@
       </a>
       <a routerLink="/shopping-cart">
           <img src="../../../assets/icons/cart-icon.svg">
-          <div *ngIf = "cart.getCart().length > 0" class="orange-circle">{{cart.getCart().length}}</div>
+          <div *ngIf = "cart.getCart().length > 0" class="orange-circle"><span>{{cart.getCart().length}}</span></div>
       </a>
   </div>
 </header>
