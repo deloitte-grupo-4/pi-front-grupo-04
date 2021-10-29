@@ -50,3 +50,15 @@ h1 a img {
 .icons a img {
   width: 30px;
 }
+
+.orange-circle {
+  background-color: rgb(240, 110, 3);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  float: right;
+  position: relative;
+  bottom: -15px;
+  right: 10px;
+  z-index: 2;
+}

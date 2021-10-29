@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
 import { CartProduct } from './../../Models/cartProduct.model';
 
 
@@ -8,19 +9,15 @@ import { CartProduct } from './../../Models/cartProduct.model';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
-  products:CartProduct[] = [];
   validSizes:string[] = [];
   total:number = 0;
+  products: CartProduct[] = [];
 
-  constructor() { }
+  constructor(private cart: ShoppingCartService) { }
 
   ngOnInit(): void {
-    let savedCart = localStorage.getItem("estampas_products");
-
-    if(savedCart){
-      this.products = JSON.parse(savedCart);
-    }
     this.validSizes = ['P', 'M', 'G', 'GG']
+    this.products = this.cart.getCart()
     this.calculateTotal()
   }
 
@@ -30,9 +27,8 @@ export class CartPageComponent implements OnInit {
     } else {
       product.quantity++;
     }
+    this.cart.setCart(this.products);
     this.calculateTotal();
-    this.updateLocalStorage();
-
   }
 
   clickDecrease(product:CartProduct){
@@ -41,25 +37,18 @@ export class CartPageComponent implements OnInit {
     } else {
       product.quantity <= 1 ? product.quantity = 1 : product.quantity--;
     }
+    this.cart.setCart(this.products);
     this.calculateTotal();
-    this.updateLocalStorage();
   }
 
   deleteProduct(product:CartProduct){
-    this.products = this.products.filter(item => {
-      item != product
-    })
-    localStorage.setItem("estampas_products", JSON.stringify(this.products));
+    this.cart.removeFromCart(product);
+    this.products = this.cart.getCart();
     this.calculateTotal();
-
-  }
-
-  updateLocalStorage(){
-    localStorage.setItem("estampas_products", JSON.stringify(this.products));
   }
 
   calculateTotal(){
-    this.total = this.products.reduce((total, next) => {
+    this.total = (this.products).reduce((total, next) => {
       if(!next.quantity){
         next.quantity = 0
       }
@@ -68,6 +57,10 @@ export class CartPageComponent implements OnInit {
       }
       return total + (next.quantity * next.price)
     }, 0)
+  }
+
+  syncCart(){
+    this.cart.setCart(this.products);
   }
 
   showModal = false;

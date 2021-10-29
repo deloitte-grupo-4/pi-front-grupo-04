@@ -4,6 +4,7 @@ import { Product } from 'src/app/Models/product.model';
 import { ProductService } from 'src/app/Services/product.service';
 import {Router} from "@angular/router"
 import { Observable, observable } from 'rxjs';
+import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
 
 
 @Component({
@@ -14,7 +15,10 @@ import { Observable, observable } from 'rxjs';
 export class ProductPageComponent implements OnInit {
   product: Product = new Product();
 
-  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private productService: ProductService,
+    private route: ActivatedRoute,
+    private router: Router,
+    public cart: ShoppingCartService) { }
 
   ngOnInit(): void {
     let id:any = this.route.snapshot.paramMap.get('id')
@@ -53,23 +57,12 @@ export class ProductPageComponent implements OnInit {
   }
 
   addToCart(){
-    let shoppingCart = [];
-    let savedCart = localStorage.getItem("estampas_products")
-
-    if(savedCart){
-      shoppingCart = JSON.parse(savedCart);
-    }
-
-    console.log(this.product);
     let productToAdd = {
       name: this.product.name,
       price: this.product.price,
       quantity: this.quantity,
       size: this.selectedSize
     }
-
-    shoppingCart.push(productToAdd);
-
-    localStorage.setItem("estampas_products", JSON.stringify(shoppingCart))
+    this.cart.addToCart(productToAdd);
   }
 }

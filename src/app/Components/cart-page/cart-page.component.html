@@ -17,7 +17,7 @@
               </p>
         </div>
         <div class="product-info">
-           <select [(ngModel)] = "product.size" (change) = "updateLocalStorage()">
+           <select [(ngModel)] = "product.size" (change)="syncCart()">
             <option *ngFor="let size of validSizes" value={{size}} [selected]="product.size == size">{{size}}</option>
           </select>
 
