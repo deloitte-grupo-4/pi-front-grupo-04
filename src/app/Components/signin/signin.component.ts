@@ -10,10 +10,9 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class SigninComponent implements OnInit {
 
-  email?:string;
-  pass?:string;
-  user?:any
-  //user:User = new User();
+  username?:string;
+  password?:string;
+   //user:User = new User();
 
   constructor(private userService: UserService, private router:Router) { }
 
@@ -22,9 +21,8 @@ export class SigninComponent implements OnInit {
   }
 
   public login(){
-       this.user.email = this.email;
-       this.user.pass = this.pass;
-       this.userService.login(this.user);
+       this.username = this.username;
+       this.password = this.password;
 
        this.router.navigate(['']);
    }

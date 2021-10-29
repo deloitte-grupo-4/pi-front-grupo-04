@@ -13,6 +13,6 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   register(user:User){
-    return this.http.post(`${this.url}/user/register`, user).pipe(take(1));
+    return this.http.post(`${this.url}/auth/criarUser`, user).pipe(take(1));
   }
 }
