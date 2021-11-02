@@ -57,8 +57,12 @@ const routes: Routes = [
     {
       path: '', component: AuthenticationComponent,
       children: [
-        { path: '', redirectTo: 'login', pathMatch: 'full'},
-        { path: 'login', component: SigninComponent}
+        { 
+          path: '', redirectTo: 'login', pathMatch: 'full'
+        },
+        { 
+          path: 'login', component: SigninComponent
+        }
       ]
     }
   ];

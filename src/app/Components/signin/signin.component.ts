@@ -12,7 +12,8 @@ export class SigninComponent implements OnInit {
 
   username?:string;
   password?:string;
-   //user:User = new User();
+  // user:any;
+  // user?:User = new User();
 
   constructor(private userService: UserService, private router:Router) { }
 
@@ -20,9 +21,10 @@ export class SigninComponent implements OnInit {
 
   }
 
-  public login(){
-       this.username = this.username;
-       this.password = this.password;
+  public login(user:User){
+      //  this.user.username = this.username;
+      //  this.user.password = this.password;
+      this.userService.login(user);
 
        this.router.navigate(['']);
    }
