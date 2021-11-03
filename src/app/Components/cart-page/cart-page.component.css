@@ -64,6 +64,7 @@ p {
 .product-img img {
   width: 200px;
   height: 200px;
+  margin-right: 15px;
 }
 
 h2 {
