@@ -26,8 +26,8 @@
   </section>
   <section class="container">
     <h2>mais vendidos</h2>
-    <div class="imgs" *ngFor="let product of products">
-      <a [routerLink]="['/product', { id: product.id }]">
+    <div class="imgs">
+      <a [routerLink]="['/product', { id: product.id }]" *ngFor="let product of products | slice:0:4;">
         <img src={{product.url}}>
       </a>
     </div>
@@ -35,10 +35,9 @@
   <section class="container">
     <h2>coleção 2021</h2>
     <div class="imgs">
-      <img src="../../../assets/img/img2.png" />
-      <img src="../../../assets/img/img2.png" />
-      <img src="../../../assets/img/img2.png" />
-      <img src="../../../assets/img/img2.png" />
+      <a [routerLink]="['/product', { id: product.id }]" *ngFor="let product of products | slice:4:8;">
+        <img src={{product.url}}>
+      </a>
     </div>
   </section>
   <app-footer></app-footer>

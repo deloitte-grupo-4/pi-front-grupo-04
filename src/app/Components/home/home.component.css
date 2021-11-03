@@ -53,11 +53,13 @@ h2 {
 .imgs {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   margin-bottom: 50px;
+  gap: 10px;
 }
 
 .imgs img {
   width: 260px;
   height: 300px;
+  display: inline;
 }
