@@ -4,4 +4,5 @@ export class CartProduct {
   price?:number;
   quantity?:number;
   size?:string;
+  url?:string;
 }

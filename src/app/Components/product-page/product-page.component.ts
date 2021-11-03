@@ -58,10 +58,12 @@ export class ProductPageComponent implements OnInit {
 
   addToCart(){
     let productToAdd = {
+      id: this.product.id,
       name: this.product.name,
       price: this.product.price,
       quantity: this.quantity,
-      size: this.selectedSize
+      size: this.selectedSize,
+      url: this.product.url
     }
     this.cart.addToCart(productToAdd);
   }
