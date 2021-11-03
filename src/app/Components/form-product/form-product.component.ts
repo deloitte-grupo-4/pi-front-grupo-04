@@ -23,10 +23,7 @@ export class FormProductComponent implements OnInit {
         this.category = resp.category;
         this.price = resp.price;
         this.description = resp.description;
-        this.quantity = resp.quantity;
-        this.type = resp.type;
-        this.size = resp.size;
-
+        this.url = resp.url;
     })
   }
 
@@ -36,9 +33,7 @@ export class FormProductComponent implements OnInit {
   category?:string;
   price?:number;
   description?:string;
-  quantity?:number;
-  type?:string;
-  size?:string;
+  url?:string
 
   public sendForm(){
     this.product = new Product();
@@ -46,9 +41,7 @@ export class FormProductComponent implements OnInit {
     this.product.category = this.category;
     this.product.price = this.price;
     this.product.description = this.description;
-    this.product.quantity = this.quantity;
-    this.product.type = this.type;
-    this.product.size = this.size;
+    this.product.url = this.url;
 
     this.productService.createProduct(this.product);
 
@@ -60,15 +53,11 @@ export class FormProductComponent implements OnInit {
     this.productUpdate.category = this.category;
     this.productUpdate.price = this.price;
     this.productUpdate.description = this.description;
-    this.productUpdate.quantity = this.quantity;
-    this.productUpdate.type = this.type;
-    this.productUpdate.size = this.size;
+    this.productUpdate.url = this.url;
 
     this.productService.putProducts(this.productUpdate);
 
     this.router.navigate(['/product-list']);
-
-    
   }
 
 }

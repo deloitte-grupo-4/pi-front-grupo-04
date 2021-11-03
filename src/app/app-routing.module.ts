@@ -52,15 +52,15 @@ const routes: Routes = [
         }
 
       ],
-      canActivate: [AuthenticationGuard]
+     // canActivate: [AuthenticationGuard]
     },
-    {
+    { 
       path: '', component: AuthenticationComponent,
       children: [
-        { 
+        {
           path: '', redirectTo: 'login', pathMatch: 'full'
         },
-        { 
+        {
           path: 'login', component: SigninComponent
         }
       ]

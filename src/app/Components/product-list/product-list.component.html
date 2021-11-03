@@ -4,12 +4,11 @@
         <h1>Lista de produtos</h1>
         <div class="produto" *ngFor="let product of products">
             <div class="produto-info">
-                    <img src="https://via.placeholder.com/170"/>
+                    <img src="{{product.url}}"/>
                 <div>
                     <h5>Nome: {{product.name}}</h5>
                     <p>Descrição: <span>{{product.description}}</span></p>
                     <p>Valor: <span>R${{product.price}}</span></p>
-                    <p>Quantidade: <span>{{product.quantity}}</span></p>
                     <p>Categorias: {{product.category}}</p>
                 </div>
             </div>
@@ -31,6 +30,6 @@
         <div class="btn-list ">
             <a routerLink="/product-form"><button type="button" class="btn btn-success btn-lg">Cadastrar produto</button></a>
         </div>
-        
+
     </main>
 </body>
