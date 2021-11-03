@@ -28,7 +28,7 @@
     <h2>mais vendidos</h2>
     <div class="imgs" *ngFor="let product of products">
       <a [routerLink]="['/product', { id: product.id }]">
-        {{ product.name }}
+        <img src={{product.url}}>
       </a>
     </div>
   </section>
