@@ -4,7 +4,5 @@ export class Product {
   category?:string;
   price?:number;
   description?:string;
-  quantity?:number;
-  type?:string;
-  size?:string;
+  url?:string;
 }
