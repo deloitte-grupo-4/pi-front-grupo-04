@@ -9,11 +9,15 @@
   <section class="container">
     <h2>mais vendidos</h2>
     <div class="imgs">
-      <div *ngFor="let product of filteredProducts">
+      <div *ngFor="let product of filteredProducts" class="card">
         <a [routerLink]="['/product', { id: product.id }]">
-          <img src={{product.url}}>
+          <img src={{product.url}} class="card-img-top">
         </a>
-      </div>
+        <div class="card-body">
+          <h5 class="card-text">{{product.name}}</h5>
+          <p class="card-text">R${{product.price}}</p>
+        </div>
+        </div>
     </div>
   </section>
 
