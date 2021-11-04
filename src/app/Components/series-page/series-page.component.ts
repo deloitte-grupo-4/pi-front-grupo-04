@@ -17,6 +17,10 @@ export class SeriesPageComponent implements OnInit {
       this.products = products;
       console.log(this.products)
     });
+    this.products = this.products.filter((product) => {
+      return product.category == 'series'})
+
+    this.products = this.products.slice(0,3);
   }
 
 }

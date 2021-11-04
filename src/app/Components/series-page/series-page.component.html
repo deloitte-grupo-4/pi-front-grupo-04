@@ -9,7 +9,7 @@
   <section class="container">
     <h2>mais vendidos</h2>
     <div class="imgs">
-      <div *ngFor="let product of products | slice:0:4;">
+      <div *ngFor="let product of products">
         <a [routerLink]="['/product', { id: product.id }]" *ngIf="product.category == 'series'">
           <img src={{product.url}}>
         </a>
