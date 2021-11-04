@@ -1,0 +1,19 @@
+<app-header></app-header>
+<main class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="#">séries</a></li>
+    </ol>
+  </nav>
+  <section class="container">
+    <h2>mais vendidos</h2>
+    <div class="imgs">
+      <a [routerLink]="['/product', { id: product.id }]" *ngFor="let product of products | slice:0:4;">
+        <img src={{product.url}}>
+      </a>
+    </div>
+  </section>
+
+</main>
+<app-footer></app-footer>
