@@ -13,8 +13,8 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService:ProductService) { }
 
-  ngOnInit(): void {
-    this.getProducts();    
+  ngOnInit(){
+    this.getProducts();
   }
 
   public getProducts():void{
@@ -35,7 +35,7 @@ export class ProductListComponent implements OnInit {
         this.products.splice(pos, 1);
       }
     }
-    
+
     }
 
   }
