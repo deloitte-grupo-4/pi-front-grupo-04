@@ -11,6 +11,11 @@ export class UserService {
 
   public login(user:User):void{
     this.http.post<User>('http://localhost:8080/auth/logar', user)
-    .subscribe(result => window.sessionStorage.setItem('token', "Autorizado"));
+    .subscribe(result => window.sessionStorage.setItem('token', JSON.stringify(user.username)));
+  }
+
+  public getUser() {
+    let savedUser = sessionStorage.getItem('token');
+    return savedUser;
   }
 }
