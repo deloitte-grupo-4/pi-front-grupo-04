@@ -8,9 +8,18 @@ import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   constructor(public cart: ShoppingCartService, public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  user = 'Gabi'
+
+  loggedIn(){
+    if(this.user) {
+      this.router.navigate(['/profile'])
+    } else {
+      this.router.navigate(['/login'])
+    }
   }
 }
