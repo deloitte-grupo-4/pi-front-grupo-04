@@ -55,7 +55,7 @@ export class CartPageComponent implements OnInit {
       if(!next.price){
         next.price = 0
       }
-      return total + (next.quantity * next.price)
+      return Math.round((total + (next.quantity * next.price))*100)/100
     }, 0)
   }
 

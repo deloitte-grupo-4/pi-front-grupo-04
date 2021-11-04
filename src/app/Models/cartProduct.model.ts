@@ -1,5 +1,5 @@
 export class CartProduct {
-  id?: number
+  id?: string;
   name?:string;
   price?:number;
   quantity?:number;
