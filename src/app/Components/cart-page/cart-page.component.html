@@ -43,6 +43,6 @@
       <button type="button" class="btn btn-default" (click) = "showingModal()">Finalizar pedido</button>
     </div>
   </section>
-  <app-signin-modal *ngIf = "showModal" (onCancelClick)="hidingModal()"></app-signin-modal>
+  <app-signin *ngIf = "showModal" (onCancelClick)="hidingModal()"></app-signin>
 </main>
 <app-footer></app-footer>
