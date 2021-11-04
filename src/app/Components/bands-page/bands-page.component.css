@@ -1,0 +1,45 @@
+main {
+  height: 100%;
+  margin-top: 2em;
+}
+
+.breadcrumb {
+  background-color: #fff;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.breadcrumb-item a{
+  color: var(--main);
+  font-weight: 600;
+}
+
+.active {
+  color: var(--light-gray);
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 28px;
+  margin-bottom:  15px;
+}
+
+section {
+  margin-top: 2.5em;
+}
+
+.imgs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+  gap: 10px;
+}
+
+.imgs img {
+  width: 260px;
+  height: 300px;
+  display: inline;
+}

@@ -25,6 +25,9 @@ import { SignupComponent } from './Components/signup/signup.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 import { CepService } from './Services/cep.service';
 import { SeriesPageComponent } from './Components/series-page/series-page.component';
+import { GamesPageComponent } from './Components/games-page/games-page.component';
+import { FilmsPageComponent } from './Components/films-page/films-page.component';
+import { BandsPageComponent } from './Components/bands-page/bands-page.component';
 
 
 
@@ -49,7 +52,10 @@ import { SeriesPageComponent } from './Components/series-page/series-page.compon
     SigninModalComponent,
     UserPageComponent,
     FooterComponent,
-    SeriesPageComponent
+    SeriesPageComponent,
+    GamesPageComponent,
+    FilmsPageComponent,
+    BandsPageComponent
   ],
   imports: [
     BrowserModule,

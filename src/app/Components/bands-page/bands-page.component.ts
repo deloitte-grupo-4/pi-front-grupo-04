@@ -3,11 +3,11 @@ import { Product } from 'src/app/Models/product.model';
 import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
-  selector: 'app-series-page',
-  templateUrl: './series-page.component.html',
-  styleUrls: ['./series-page.component.css']
+  selector: 'app-bands-page',
+  templateUrl: './bands-page.component.html',
+  styleUrls: ['./bands-page.component.css']
 })
-export class SeriesPageComponent implements OnInit {
+export class BandsPageComponent implements OnInit {
   products: Product[] = [];
 
   constructor(private productService:ProductService) { }
@@ -15,8 +15,6 @@ export class SeriesPageComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().subscribe(products => {
       this.products = products;
-      console.log(this.products)
     });
   }
-
 }

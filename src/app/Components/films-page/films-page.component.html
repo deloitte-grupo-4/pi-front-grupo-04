@@ -3,14 +3,14 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#">home</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><a href="#">séries</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="#">filmes</a></li>
     </ol>
   </nav>
   <section class="container">
     <h2>mais vendidos</h2>
     <div class="imgs">
-      <div *ngFor="let product of products | slice:0:4;">
-        <a [routerLink]="['/product', { id: product.id }]" *ngIf="product.category == 'series'">
+      <div  *ngFor="let product of products">
+        <a [routerLink]="['/product', { id: product.id }]" *ngIf="product.category == 'filmes'">
           <img src={{product.url}}>
         </a>
       </div>
