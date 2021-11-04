@@ -27,7 +27,12 @@ export class SigninComponent implements OnInit {
       //  this.user.password = this.password;
       this.userService.login(user);
 
-       this.router.navigate(['']);
+      if(this.router.url !== '/shopping-cart'){
+        console.log(this.router.url)
+        this.router.navigate(['/profile']);
+      } else {
+        this.router.navigate(['/payment']);
+      }
    }
 
    cancel(){
@@ -35,7 +40,7 @@ export class SigninComponent implements OnInit {
   }
 
   checkRoute(url:any){
-    console.log(url);
+
     if(url == '/login'){
       return ''
     } else {

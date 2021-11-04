@@ -31,7 +31,6 @@ export class PaymentPageComponent implements OnInit {
 
   submitOrder(){
     let shoppingCart = this.shoppingCart.getCart();
-    console.log(shoppingCart)
   }
 
 }

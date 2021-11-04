@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  user = 'Gabi'
+  user = ''
 
   loggedIn(){
     if(this.user) {
