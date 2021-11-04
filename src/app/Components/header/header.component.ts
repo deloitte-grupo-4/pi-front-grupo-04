@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(public cart: ShoppingCartService, public router: Router, public userService: UserService) { }
 
   ngOnInit(): void {
+    this.user = this.userService.getUser();
   }
 
   user = this.userService.getUser();

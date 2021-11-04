@@ -14,13 +14,16 @@ export class CartPageComponent implements OnInit {
   validSizes:string[] = [];
   total:number = 0;
   products: CartProduct[] = [];
+  user:string|null = '';
 
   constructor(private cart: ShoppingCartService, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     this.validSizes = ['P', 'M', 'G', 'GG']
     this.products = this.cart.getCart()
-    this.calculateTotal()
+    this.calculateTotal();
+
+    this.user = this.userService.getUser();
   }
 
   clickIncrease(product:CartProduct){
@@ -75,7 +78,6 @@ export class CartPageComponent implements OnInit {
     this.showModal = false;
   }
 
-  user = this.userService.getUser();
 
   loggedIn(){
 

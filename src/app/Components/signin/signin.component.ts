@@ -15,7 +15,6 @@ export class SigninComponent implements OnInit {
   password?:string;
   // user:any;
   // user?:User = new User();
-  url:string = '';
 
   constructor(private userService: UserService, public router:Router) { }
 
@@ -40,7 +39,6 @@ export class SigninComponent implements OnInit {
   }
 
   checkRoute(url:any){
-
     if(url == '/login'){
       return ''
     } else {
