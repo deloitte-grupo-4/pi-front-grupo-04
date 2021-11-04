@@ -11,20 +11,23 @@ import { ProductService } from 'src/app/Services/product.service';
 })
 export class CategoryPageComponent implements OnInit {
   products: Product[] = [];
+  filteredProducts: Product[] = [];
   category: string = 'series'; // default category is series
 
   constructor(private route: ActivatedRoute, private productService:ProductService) { }
 
   ngOnInit(): void {
-    let category = this.route.snapshot.paramMap.get("cat")
-    console.log(category)
-    if(category){
-      this.category = category
-    }
+    this.route.params.subscribe((params: any) => {
+      let category = params.category;
+      if(category){
+        this.category = category
+      }
+      this.filteredProducts = this.products.filter((product) => product.category == this.category);
+    })
     this.productService.getProducts().subscribe(products => {
-      console.log(products)
-      this.products = products.filter((product) => product.category == this.category);
-      console.log(this.products)
-    });  }
+      this.products = products
+      this.filteredProducts = this.products.filter((product) => product.category == this.category);
+    });
+  }
 
 }

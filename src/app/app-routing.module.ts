@@ -50,7 +50,7 @@ const routes: Routes = [
           path: 'confirmation', component: ConfirmationPageComponent
         },
         {
-          path: 'category', component: CategoryPageComponent,
+          path: 'category/:category', component: CategoryPageComponent,
         },
         {
           path: 'profile', component: UserPageComponent
