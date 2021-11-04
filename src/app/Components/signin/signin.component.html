@@ -1,5 +1,9 @@
-<app-header></app-header>
+<app-header *ngIf="router.url == '/login'"></app-header>
 <main>
+  <div [ngClass]="checkRoute(router.url)">
+    <span class="material-icons" (click)="cancel()" *ngIf = "router.url !== '/login'">
+      close
+    </span>
     <h1 class="text-center">Login</h1>
     <form class="form mt-4" (submit)="login({username, password})">
       <div class="form-group">
@@ -12,7 +16,7 @@
           [(ngModel)]="username"
         />
       </div>
-      
+
       <div class="form-group">
         <input
           name="password"
@@ -28,5 +32,5 @@
 
     <p>Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a></p>
 
-
+  </div>
 </main>
