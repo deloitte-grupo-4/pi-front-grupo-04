@@ -15,11 +15,11 @@ export class SigninComponent implements OnInit {
   password?:string;
   // user:any;
   // user?:User = new User();
+  url:string = '';
 
   constructor(private userService: UserService, public router:Router) { }
 
   ngOnInit(): void {
-
   }
 
   public login(user:User){
@@ -34,5 +34,13 @@ export class SigninComponent implements OnInit {
     this.onCancelClick.emit()
   }
 
+  checkRoute(url:any){
+    console.log(url);
+    if(url == '/login'){
+      return ''
+    } else {
+       return 'modal'
+    }
+  }
 
 }
