@@ -19,7 +19,6 @@ import { PaymentPageComponent } from './Components/payment-page/payment-page.com
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
 import { ProgressBarComponent } from './Components/progress-bar/progress-bar.component';
-import { SigninModalComponent } from './Components/signin-modal/signin-modal.component';
 import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
@@ -46,7 +45,6 @@ import { CategoryPageComponent } from './Components/category-page/category-page.
     PaymentPageComponent,
     ConfirmationPageComponent,
     ProgressBarComponent,
-    SigninModalComponent,
     UserPageComponent,
     FooterComponent,
     CategoryPageComponent
