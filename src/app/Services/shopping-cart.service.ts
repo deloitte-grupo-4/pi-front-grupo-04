@@ -16,7 +16,7 @@ export class ShoppingCartService {
 
   removeFromCart(p : CartProduct) {
     this.shoppingCart = this.shoppingCart.filter(item => {
-      item != p
+      return item.id != p.id
     })
     localStorage.setItem("estampas_products", JSON.stringify(this.shoppingCart));
   }

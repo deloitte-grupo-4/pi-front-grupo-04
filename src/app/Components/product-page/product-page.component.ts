@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/Models/product.model';
 import { ProductService } from 'src/app/Services/product.service';
-import {Router} from "@angular/router"
-import { Observable, observable } from 'rxjs';
+import { Router } from "@angular/router"
 import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
 
 
@@ -56,9 +55,19 @@ export class ProductPageComponent implements OnInit {
     this.quantity <= 0 ? this.quantity = 0 : this.quantity--;
   }
 
+  createUUID(){
+    var dt = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*16)%16 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
+
   addToCart(){
     let productToAdd = {
-      id: this.product.id,
+      id: this.createUUID(),
       name: this.product.name,
       price: this.product.price,
       quantity: this.quantity,
