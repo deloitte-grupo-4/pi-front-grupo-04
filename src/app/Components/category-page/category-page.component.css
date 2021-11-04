@@ -33,7 +33,7 @@ section {
 .imgs {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin-bottom: 50px;
   gap: 10px;
 }

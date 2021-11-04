@@ -11,7 +11,6 @@ import { MainComponent } from './Components/main/main.component';
 import { PaymentPageComponent } from './Components/payment-page/payment-page.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductPageComponent } from './Components/product-page/product-page.component';
-import { SeriesPageComponent } from './Components/series-page/series-page.component';
 import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
@@ -54,9 +53,6 @@ const routes: Routes = [
         },
         {
           path: 'profile', component: UserPageComponent
-        },
-        {
-          path: 'series', component: SeriesPageComponent
         }
       ],
      // canActivate: [AuthenticationGuard]

@@ -24,7 +24,6 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 import { CepService } from './Services/cep.service';
-import { SeriesPageComponent } from './Components/series-page/series-page.component';
 import { CategoryPageComponent } from './Components/category-page/category-page.component';
 
 
@@ -50,7 +49,6 @@ import { CategoryPageComponent } from './Components/category-page/category-page.
     SigninModalComponent,
     UserPageComponent,
     FooterComponent,
-    SeriesPageComponent,
     CategoryPageComponent
   ],
   imports: [
