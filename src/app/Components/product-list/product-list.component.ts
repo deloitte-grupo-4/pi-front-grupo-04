@@ -35,7 +35,6 @@ export class ProductListComponent implements OnInit {
         this.products.splice(pos, 1);
       }
     }
-    
     }
 
   }

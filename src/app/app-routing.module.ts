@@ -19,8 +19,6 @@ const routes: Routes = [
 
     {
 
-
-
       path: '', component: MainComponent,
       children: [
         {
@@ -52,7 +50,7 @@ const routes: Routes = [
         }
 
       ],
-      canActivate: [AuthenticationGuard]
+      
     },
     {
       path: '', component: AuthenticationComponent,

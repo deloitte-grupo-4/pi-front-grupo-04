@@ -22,11 +22,9 @@ export class SigninComponent implements OnInit {
   }
 
   public login(user:User){
-      //  this.user.username = this.username;
-      //  this.user.password = this.password;
+    
       this.userService.login(user);
-
-       this.router.navigate(['']);
+      this.router.navigate(['']);
    }
 
 
