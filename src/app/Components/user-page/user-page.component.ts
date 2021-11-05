@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-user-page',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPageComponent implements OnInit {
 
-  constructor() { }
+   constructor(private userService: UserService) { }
+
+  user = this.userService.getName();
 
   ngOnInit(): void {
   }
@@ -17,5 +20,8 @@ export class UserPageComponent implements OnInit {
   expand(){
     this.expandMenu = !this.expandMenu;
   }
+
+  
+  
 
 }
