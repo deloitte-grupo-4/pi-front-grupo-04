@@ -26,6 +26,12 @@ export class SigninComponent implements OnInit {
       //  this.user.password = this.password;
       this.userService.login(user);
 
+      if(this.user) {
+        this.router.navigate(['/profile'])
+      } else {
+        this.router.navigate(['/login'])
+      }
+
       if(this.router.url !== '/shopping-cart'){
         console.log(this.router.url)
         this.router.navigate(['/profile']);
@@ -38,7 +44,9 @@ export class SigninComponent implements OnInit {
     this.onCancelClick.emit()
   }
 
-  checkRoute(url:any){
+  user = this.userService.getUser();
+
+  applyClass(url:any){
     if(url == '/login'){
       return ''
     } else {

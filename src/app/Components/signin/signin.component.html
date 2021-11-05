@@ -1,6 +1,6 @@
 <app-header *ngIf="router.url == '/login'"></app-header>
 <main>
-  <div [ngClass]="checkRoute(router.url)">
+  <div [ngClass]="applyClass(router.url)">
     <span class="material-icons" (click)="cancel()" *ngIf = "router.url !== '/login'">
       close
     </span>
