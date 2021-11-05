@@ -5,4 +5,6 @@ export interface User {
     surname?:string;
     username?:string;
     password?:string;
+    userId?:string;
+    
   }
