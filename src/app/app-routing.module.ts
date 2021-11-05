@@ -55,7 +55,7 @@ const routes: Routes = [
           path: 'profile', component: UserPageComponent
         }
       ],
-     // canActivate: [AuthenticationGuard]
+     canActivate: [AuthenticationGuard]
     },
     {
       path: '', component: AuthenticationComponent,

@@ -40,7 +40,7 @@
       <p>Total: R${{total}} </p>
     </div>
     <div class="btn-submit">
-      <button type="button" class="btn btn-default" (click) = "showingModal()">Finalizar pedido</button>
+      <button type="button" class="btn btn-default" (click) = "loggedIn()">Finalizar pedido</button>
     </div>
   </section>
   <app-signin *ngIf = "showModal" (onCancelClick)="hidingModal()"></app-signin>

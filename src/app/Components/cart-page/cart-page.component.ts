@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
+import { UserService } from 'src/app/Services/user.service';
 import { CartProduct } from './../../Models/cartProduct.model';
 
 
@@ -12,13 +14,16 @@ export class CartPageComponent implements OnInit {
   validSizes:string[] = [];
   total:number = 0;
   products: CartProduct[] = [];
+  user:string|null = '';
 
-  constructor(private cart: ShoppingCartService) { }
+  constructor(private cart: ShoppingCartService, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     this.validSizes = ['P', 'M', 'G', 'GG']
     this.products = this.cart.getCart()
-    this.calculateTotal()
+    this.calculateTotal();
+
+    this.user = this.userService.getUser();
   }
 
   clickIncrease(product:CartProduct){
@@ -71,5 +76,16 @@ export class CartPageComponent implements OnInit {
 
   hidingModal(){
     this.showModal = false;
+  }
+
+
+  loggedIn(){
+
+    if(this.user){
+      this.router.navigate(['/payment'])
+    } else {
+      this.showingModal()
+    }
+
   }
 }

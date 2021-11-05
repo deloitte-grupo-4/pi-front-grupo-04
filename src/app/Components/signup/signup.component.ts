@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
         console.log(data);
       },
       error: err => console.log(err),
-      complete: () => console.log("Observável finalizado")
+      complete: () => this.router.navigate(['/'])
     });
 
   }
