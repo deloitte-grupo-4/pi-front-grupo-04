@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main class="container">
-  <h1>Bem vindo, {{user}}!</h1>
+    <h1>Bem vindo, {{user}}!</h1>
   <div class="menu">
     <h3 (click)="expand()">meus pedidos</h3>
     <div *ngIf="expandMenu" class="menu-box">
@@ -14,4 +14,6 @@
       </div>
     <h3>editar perfil</h3>
   </div>
+  <button (click) = logout() class="btn btn-default">sair</button>
 </main>
+<app-footer></app-footer>
