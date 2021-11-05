@@ -14,6 +14,9 @@ import { UserService } from 'src/app/Services/user.service';
 export class PaymentPageComponent implements OnInit {
   cep = new Cep();
   selectedValue = 'boleto'
+  loading = false;
+  text = 'Finalizar compra'
+
   constructor(private cepService:CepService,
     private shoppingCartService: ShoppingCartService,
     private userService: UserService,
@@ -38,6 +41,8 @@ export class PaymentPageComponent implements OnInit {
   }
 
   submitOrder(event:any){
+    this.loading = true;
+    this.text = ''
     event.preventDefault();
     let order = {
       shoppingCart : this.shoppingCartService.getCart(),

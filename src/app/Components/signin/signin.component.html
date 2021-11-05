@@ -27,7 +27,8 @@
           [(ngModel)]="password"
         />
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      <button type="submit" class="btn btn-primary btn-block"[disabled]="loading">
+        <i class="fa fa-circle-o-notch fa-spin" *ngIf="loading"></i>{{text}}</button>
     </form>
 
     <p>Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a></p>
