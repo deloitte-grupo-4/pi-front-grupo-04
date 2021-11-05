@@ -68,7 +68,14 @@
 
       </div>
       <div class="btn-submit">
-        <button  type='submit' value='submit' class="btn btn-default" routerLink = "/confirmation" (click)="submitOrder($event)">Finalizar compra</button>
+        <button
+          type='submit'
+          value='submit'
+          [disabled]="loading"
+          class="btn btn-default"
+          routerLink = "/confirmation"
+          (click)="submitOrder($event)">
+          <i class="fa fa-circle-o-notch fa-spin" *ngIf="loading"></i>{{text}}</button>
       </div>
     </form>
   </section>

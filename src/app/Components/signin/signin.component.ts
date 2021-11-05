@@ -13,6 +13,9 @@ export class SigninComponent implements OnInit {
 
   username?:string;
   password?:string;
+  loading = false;
+  text = 'Entrar'
+
 
   constructor(private userService: UserService, public router:Router) { }
 
@@ -20,6 +23,8 @@ export class SigninComponent implements OnInit {
   }
 
   public login(){
+     this.loading = true;
+     this.text = ''
       this.userService.login({username: this.username, password: this.password}).subscribe((result:any) => {
         if(result) {
           if(this.router.url !== '/shopping-cart'){

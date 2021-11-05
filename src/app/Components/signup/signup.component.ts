@@ -15,6 +15,8 @@ export class SignupComponent implements OnInit {
   surname?:string;
   username?:string;
   password?:string;
+  loading = false;
+  text = 'Cadastrar'
 
   constructor(private auth: AuthService, private router:Router) { }
 
@@ -22,6 +24,8 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(user:User){
+    this.loading = true;
+    this.text = ''
     this.auth.register(user).subscribe({
       next: data =>{
         console.log(data);
