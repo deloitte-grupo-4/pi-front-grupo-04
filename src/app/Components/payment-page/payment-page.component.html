@@ -10,7 +10,7 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="cep">CEP:</label>
-            <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" (blur) = "findCEP()" [(ngModel)]="cep.cep">
+            <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" (blur) = "findCEP()" [(ngModel)]="cep.cep" required>
           </div>
           <div class="form-group col-md-8">
             <label for="rua">Endereço:</label>
@@ -20,7 +20,7 @@
         <div class="form-row">
           <div class="form-group col-md-2">
             <label for="rua">Número:</label>
-            <input type="text" class="form-control" id="numero" name="numero"  [(ngModel)]="cep.numero">
+            <input type="text" class="form-control" id="numero" name="numero"  [(ngModel)]="cep.numero" required>
           </div>
           <div class="form-group col-md-6">
             <label for="cidade">Cidade:</label>
@@ -35,13 +35,11 @@
 
       <div class="payment-method">
         <h2>Método de pagamento:</h2>
-        <form>
           <select [(ngModel)] = "selectedValue" name="selectedValue">
             <option value="boleto" name="boleto">Boleto</option>
             <option value="credito" name="credito">Cartão de crédito</option>
             <option value="debito" name="debito">Cartão de débito</option>
           </select>
-        </form>
       </div>
       <div *ngIf="selectedValue != 'boleto'">
         <div class="card-payment">
@@ -70,7 +68,7 @@
 
       </div>
       <div class="btn-submit">
-        <button type="submit" class="btn btn-default" routerLink = "/confirmation" (click)="submitOrder($event)">Finalizar compra</button>
+        <button  type='submit' value='submit' class="btn btn-default" routerLink = "/confirmation" (click)="submitOrder($event)">Finalizar compra</button>
       </div>
     </form>
   </section>

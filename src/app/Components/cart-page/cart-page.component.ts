@@ -78,9 +78,7 @@ export class CartPageComponent implements OnInit {
     this.showModal = false;
   }
 
-
   loggedIn(){
-
     if(this.user){
       this.router.navigate(['/payment'])
     } else {
