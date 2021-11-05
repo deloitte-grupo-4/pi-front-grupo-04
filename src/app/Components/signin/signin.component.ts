@@ -13,38 +13,29 @@ export class SigninComponent implements OnInit {
 
   username?:string;
   password?:string;
-  // user:any;
-  // user?:User = new User();
 
   constructor(private userService: UserService, public router:Router) { }
 
   ngOnInit(): void {
   }
 
-  public login(user:User){
-      //  this.user.username = this.username;
-      //  this.user.password = this.password;
-      this.userService.login(user);
-
-      if(this.user) {
-        this.router.navigate(['/profile'])
-      } else {
-        this.router.navigate(['/login'])
-      }
-
-      if(this.router.url !== '/shopping-cart'){
-        console.log(this.router.url)
-        this.router.navigate(['/profile']);
-      } else {
-        this.router.navigate(['/payment']);
-      }
+  public login(){
+      this.userService.login({username: this.username, password: this.password}).subscribe((result:any) => {
+        if(result) {
+          if(this.router.url !== '/shopping-cart'){
+            this.router.navigate(['/profile']);
+          } else {
+            this.router.navigate(['/payment']);
+          }
+        } else {
+          this.router.navigate(['/login'])
+        }
+      });
    }
 
    cancel(){
     this.onCancelClick.emit()
   }
-
-  user = this.userService.getUser();
 
   applyClass(url:any){
     if(url == '/login'){

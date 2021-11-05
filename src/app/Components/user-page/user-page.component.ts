@@ -21,7 +21,9 @@ export class UserPageComponent implements OnInit {
     this.expandMenu = !this.expandMenu;
   }
 
-  
-  
+  logout(){
+    this.userService.logout();
+  }
+
 
 }

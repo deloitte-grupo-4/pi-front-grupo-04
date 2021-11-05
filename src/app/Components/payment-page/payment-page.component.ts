@@ -45,7 +45,6 @@ export class PaymentPageComponent implements OnInit {
       username : this.userService.getUser(),
       paymentMethod : this.selectedValue
     }
-    console.log(order)
     this.orderService.submitOrder(order).subscribe((res:any) => {
       if(res.status == 200){
         this.router.navigate(['/confirmation'])

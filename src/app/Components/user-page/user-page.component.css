@@ -8,8 +8,19 @@ h1 {
   font-size: 28px;
 }
 
-
 .menu h3 {
   font-size: 24px;
   color: var(--light-gray);
+}
+
+button {
+  margin: 2em auto;
+  color: var(--main) !important;
+  font-size: 18px;
+  text-decoration: underline !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
 }
