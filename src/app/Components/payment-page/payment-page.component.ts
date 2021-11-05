@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cep } from 'src/app/Models/cep.model';
 import { CepService } from 'src/app/Services/cep.service';
+import { OrderService } from 'src/app/Services/order.service';
 import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
 import { UserService } from 'src/app/Services/user.service';
 
@@ -12,7 +14,12 @@ import { UserService } from 'src/app/Services/user.service';
 export class PaymentPageComponent implements OnInit {
   cep = new Cep();
   selectedValue = 'boleto'
-  constructor(private cepService:CepService, private shoppingCart:ShoppingCartService, private userService: UserService) { }
+  constructor(private cepService:CepService,
+    private shoppingCartService: ShoppingCartService,
+    private userService: UserService,
+    private orderService: OrderService,
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -30,9 +37,20 @@ export class PaymentPageComponent implements OnInit {
     }
   }
 
-  submitOrder(){
-    let shoppingCart = this.shoppingCart.getCart();
-    let user = this.userService.getUser();
+  submitOrder(event:any){
+    event.preventDefault();
+    let order = {
+      shoppingCart : this.shoppingCartService.getCart(),
+      deliveryAddress : this.cep,
+      username : this.userService.getUser(),
+      paymentMethod : this.selectedValue
+    }
+    console.log(order)
+    this.orderService.submitOrder(order).subscribe((res:any) => {
+      if(res.status == 200){
+        this.router.navigate(['/confirmation'])
+      }
+    });
   }
 
 }

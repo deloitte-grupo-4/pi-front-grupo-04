@@ -4,5 +4,6 @@ import { Cep } from "./cep.model";
 export class Order {
   shoppingCart?:CartProduct[];
   deliveryAddress?:Cep;
-  username?:string;
+  userId?:number;
+  paymentMethod?:string;
 }
