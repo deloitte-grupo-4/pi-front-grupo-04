@@ -17,7 +17,7 @@ export class PaymentPageComponent implements OnInit {
   selectedValue = 'boleto'
   loading = false;
   text = 'Finalizar compra';
-  id: User;
+  id: User | undefined;
 
 
   constructor(private cepService:CepService,
