@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { LoginResponse } from '../Models/loginResponse.model';
 import { User } from '../Models/user.model';
 
@@ -29,6 +29,12 @@ export class UserService {
     sessionStorage.removeItem('name');
 
     this.router.navigate(['/'])
+  }
+
+  getById(){
+    let id = this.getUser()
+    let usuario = this.http.get(`http://localhost:8080/user/${id}`).pipe(take(1))
+    return usuario
   }
 
   public getUser() {

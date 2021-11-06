@@ -1,10 +1,11 @@
 
 
 export interface User {
-    name?:string;
-    surname?:string;
-    username?:string;
-    password?:string;
-    userId?:string;
-    
+  name?:string;
+  surname?:string;
+  username?:string;
+  password?:string;
+  userId?:string;
+  
+
   }

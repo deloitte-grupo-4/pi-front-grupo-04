@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cep } from 'src/app/Models/cep.model';
+import { User } from 'src/app/Models/user.model';
 import { CepService } from 'src/app/Services/cep.service';
 import { OrderService } from 'src/app/Services/order.service';
 import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
@@ -15,7 +16,9 @@ export class PaymentPageComponent implements OnInit {
   cep = new Cep();
   selectedValue = 'boleto'
   loading = false;
-  text = 'Finalizar compra'
+  text = 'Finalizar compra';
+  id: User;
+
 
   constructor(private cepService:CepService,
     private shoppingCartService: ShoppingCartService,
@@ -40,15 +43,28 @@ export class PaymentPageComponent implements OnInit {
     }
   }
 
+  getUser() {
+    this.userService.getById().subscribe((resp: User) => {
+      this.id = resp;
+    });
+  }
+
+
   submitOrder(event:any){
     this.loading = true;
     this.text = ''
     event.preventDefault();
     let order = {
-      shoppingCart : this.shoppingCartService.getCart(),
-      deliveryAddress : this.cep,
-      username : this.userService.getUser(),
-      paymentMethod : this.selectedValue
+       // shoppingCart : this.shoppingCartService.getCart(),
+      // deliveryAddress : this.cep,
+      cep: this.cep.cep,
+      city: this.cep.cidade,
+      logradouro: this.cep.logradouro,
+      number: this.cep.numero,
+      state: this.cep.estado,
+      user: this.id,
+      total: 8,
+      // paymentMethod: this.selectedValue,
     }
     this.orderService.submitOrder(order).subscribe((res:any) => {
       if(res.status == 200){
