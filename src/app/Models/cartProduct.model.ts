@@ -1,5 +1,6 @@
 export class CartProduct {
-  id?: string;
+  productId?: number;
+  listId?:string;
   name?:string;
   price?:number;
   quantity?:number;
