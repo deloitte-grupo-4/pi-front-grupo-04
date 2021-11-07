@@ -64,3 +64,19 @@ a {
 i {
   margin-right: 5px;
 }
+
+
+@media screen and (max-width: 600px) {
+  main {
+    margin: 2em auto 0 auto;
+    width: 80%;
+  }
+  input, button {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  button {
+    margin-top: 15px;
+  }
+}
