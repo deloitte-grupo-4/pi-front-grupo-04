@@ -49,3 +49,11 @@
 .change-color {
   color: #000;
 }
+
+@media screen and (max-width: 600px) {
+  .progress-text {
+    display: none;
+  }
+}
+
+
