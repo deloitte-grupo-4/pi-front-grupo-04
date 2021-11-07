@@ -36,7 +36,7 @@ export class ProductService {
   }
 
   public getProductByID(productID:number):Observable<Product> {
-    let obs = this.http.get<Product>(`https://e-stampas.herokuapp.com/${productID}`);
+    let obs = this.http.get<Product>(`https://e-stampas.herokuapp.com/product/${productID}`);
     return obs
   }
 
