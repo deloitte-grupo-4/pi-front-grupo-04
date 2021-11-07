@@ -32,15 +32,9 @@ export class UserService {
   }
 
   getById(){
-<<<<<<< HEAD
-    let id = this.getUser()
-    let usuario = this.http.get(`https://e-stampas.herokuapp.com/${id}`).pipe(take(1))
-=======
     let id = this.getUserID()
-    let usuario = this.http.get(`http://localhost:8080/user/${id}`).pipe(take(1))
->>>>>>> 9e26c71b5105ab5157de278066de7482ee453d29
+    let usuario = this.http.get(`https://e-stampas.herokuapp.com/${id}`).pipe(take(1))
     return usuario
-    
   }
 
   public getUserID() {
