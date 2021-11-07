@@ -21,7 +21,7 @@
       />
 
       <div
-        class="text-danger"
+        class="text-danger text-center mt-2 small"
         *ngIf="formName.touched && formName.errors?.required"
       >
         É necessário um nome.
@@ -42,7 +42,7 @@
       />
 
       <div
-        class="text-danger"
+        class="text-danger text-center mt-2 small"
         *ngIf="formSurname.touched && formSurname.errors?.required"
       >
         É necessário um sobrenome.
@@ -62,10 +62,16 @@
         required
         email
       />
-      <div class="text-danger" *ngIf="email.touched && email.errors?.required">
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="email.touched && email.errors?.required"
+      >
         É necessário um e-mail.
       </div>
-      <div class="text-danger" *ngIf="email.touched && email.errors?.email">
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="email.touched && email.errors?.email"
+      >
         Escreva um e-mail válido.
       </div>
     </div>
@@ -85,13 +91,13 @@
         required
       />
       <div
-        class="text-danger"
+        class="text-danger text-center mt-2 small"
         *ngIf="password.touched && password.errors?.required"
       >
         É necessário uma senha.
       </div>
       <div
-        class="text-danger"
+        class="text-danger text-center mt-2 small"
         *ngIf="password.touched && password.errors?.minlength"
       >
         A senha deve ter o mínimo de 5 caracteres.
@@ -112,13 +118,13 @@
         required
       />
       <div
-        class="text-danger"
+        class="text-danger text-center mt-2 small"
         *ngIf="confirmPassword.touched && confirmPassword.errors?.required"
       >
         Confirme sua senha.
       </div>
       <div
-        class="text-danger"
+        class="text-danger text-center mt-2 small"
         *ngIf="
           confirmPassword.touched && confirmPassword.errors?.passwordMismatch
         "

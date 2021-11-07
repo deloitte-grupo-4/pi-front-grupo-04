@@ -23,13 +23,13 @@
           email
         />
         <div
-          class="text-danger"
+          class="text-danger text-center mt-2 small"
           *ngIf="userName.touched && userName.errors?.required"
         >
           Email is required
         </div>
         <div
-          class="text-danger"
+          class="text-danger text-center mt-2 small"
           *ngIf="userName.touched && userName.errors?.email"
         >
           Enter a valid email address
@@ -49,13 +49,13 @@
           minlength="5"
         />
         <div
-          class="text-danger"
+          class="text-danger text-center mt-2 small"
           *ngIf="userPassword.touched && userPassword.errors?.required"
         >
           Password is required
         </div>
         <div
-          class="text-danger"
+          class="text-danger text-center mt-2 small"
           *ngIf="userPassword.touched && userPassword.errors?.minlength"
         >
           Password should have minimum 5 characters.
