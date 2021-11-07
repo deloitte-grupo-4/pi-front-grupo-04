@@ -14,13 +14,21 @@ h1 {
 }
 
 input, button, p {
-  margin: 0 auto;
   width: 350px;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content:center;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom:0;
 }
 
 p {
   color: var(--gray);
-  margin-top: 15px;
   text-align: center;
   font-weight: 700;
 }
@@ -37,12 +45,10 @@ button {
 .form-group {
   display: flex;
   flex-direction: column;
-  justify-content:center;
   margin: 0 auto;
 }
 
 label {
-  margin: 6px 0 0 100px;
   color: var(--gray)
 }
 
