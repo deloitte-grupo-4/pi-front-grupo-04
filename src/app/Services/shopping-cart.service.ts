@@ -21,6 +21,10 @@ export class ShoppingCartService {
     localStorage.setItem("estampas_products", JSON.stringify(this.shoppingCart));
   }
 
+  removeAll(){
+    localStorage.removeItem("estampas_products")
+  }
+
   getCart() {
     let savedCart = localStorage.getItem("estampas_products")
 

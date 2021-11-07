@@ -45,7 +45,7 @@ export class ProductPageComponent implements OnInit {
     this.selectedSize = selectedSize.name;
   }
 
-  quantity = 2;
+  quantity = 1;
 
   clickIncrease(){
     this.quantity++;
