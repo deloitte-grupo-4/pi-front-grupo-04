@@ -12,7 +12,6 @@ p {
   display: flex;
   justify-content: center;
   align-items:flex-start;
-  height:85vh;
   width:100%;
 }
 
@@ -98,3 +97,7 @@ h2 {
   opacity: 1;
 }
 
+span.owl-nav  {
+  color: red;
+  background-color: red;
+}
