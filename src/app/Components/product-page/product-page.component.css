@@ -161,3 +161,22 @@ h2 {
 .overlay-container:hover .overlay {
   opacity: 1;
 }
+
+@media screen and (max-width: 600px) {
+  .product{
+    flex-direction: column;
+  }
+
+  .product-box {
+    width: 100%
+  }
+
+  .sizes span, .qtd span, .product-box .qtd button  {
+    padding: .5em 1.3em;
+  }
+
+  .img-principal {
+   width: 350px;
+    height: 350px;
+  }
+}
