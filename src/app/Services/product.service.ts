@@ -14,35 +14,34 @@ export class ProductService {
   constructor(private http:HttpClient) {}
 
   public createProduct(product:Product):void{
-    this.http.post('http://localhost:8080/product', product).subscribe();
+    this.http.post('https://e-stampas.herokuapp.com/product', product).subscribe();
   }
 
 
   public getProducts():Observable<Product[]>{
-    return this.http.get<Product[]>('http://localhost:8080/product');
+    return this.http.get<Product[]>('https://e-stampas.herokuapp.com/product');
   }
 
   public putProducts(product:Product):void {
-    this.http.put('http://localhost:8080/product', product).subscribe((result) => {
+    this.http.put('https://e-stampas.herokuapp.com/product', product).subscribe((result) => {
       console.log(result);
     });
   }
 
   public receiveProduct(product:Product):void{
-    let obs = this.http.get<Product>(`http://localhost:8080/product/${product.id}`);
+    let obs = this.http.get<Product>(`https://e-stampas.herokuapp.com/product/${product.id}`);
     obs.subscribe((result)=>{
       this.onEditClick.emit(result);
     });
   }
 
   public getProductByID(productID:number):Observable<Product> {
-    let obs = this.http.get<Product>(`http://localhost:8080/product/${productID}`);
+    let obs = this.http.get<Product>(`https://e-stampas.herokuapp.com/${productID}`);
     return obs
   }
 
   public deleteProduct(productId:number | undefined):void {
-    this.http.delete(`http://localhost:8080/product/${productId}`).subscribe();
+    this.http.delete(`https://e-stampas.herokuapp.com/${productId}`).subscribe();
     console.log(productId);
   }
-
 }

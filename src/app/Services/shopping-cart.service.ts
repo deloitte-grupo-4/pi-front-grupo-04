@@ -33,5 +33,7 @@ export class ShoppingCartService {
   setCart(products: CartProduct[]){
     this.shoppingCart = products
     localStorage.setItem("estampas_products", JSON.stringify(this.shoppingCart));
+    
   }
+
 }

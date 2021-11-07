@@ -8,7 +8,7 @@ import { User } from '../Models/user.model';
 })
 export class AuthService {
 
-  private readonly url = 'http://localhost:8080';
+  private readonly url = 'https://e-stampas.herokuapp.com';
 
   constructor(private http:HttpClient) { }
 

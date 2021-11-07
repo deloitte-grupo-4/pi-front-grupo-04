@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http:HttpClient, private router: Router) { }
 
   public login(user:User){
-    return this.http.post<LoginResponse>('http://localhost:8080/auth/logar', user).pipe(
+    return this.http.post<LoginResponse>('https://e-stampas.herokuapp.com/auth/logar', user).pipe(
       map((response) => {
         window.sessionStorage.setItem('id', JSON.stringify(response.userId))
         window.sessionStorage.setItem('name', JSON.stringify(response.name))
@@ -33,8 +33,9 @@ export class UserService {
 
   getById(){
     let id = this.getUser()
-    let usuario = this.http.get(`http://localhost:8080/user/${id}`).pipe(take(1))
+    let usuario = this.http.get(`https://e-stampas.herokuapp.com/${id}`).pipe(take(1))
     return usuario
+    
   }
 
   public getUser() {

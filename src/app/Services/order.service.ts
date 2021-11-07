@@ -8,8 +8,11 @@ import { Order } from '../Models/order.model';
 export class OrderService {
 
   constructor(private http:HttpClient) { }
+  
 
   public submitOrder(order: Order){
-    return this.http.post('http://localhost:8080/order', order);
+    console.log(order)
+    // console.log(usuario)
+    return this.http.post('https://e-stampas.herokuapp.com/order', order);
   }
 }
