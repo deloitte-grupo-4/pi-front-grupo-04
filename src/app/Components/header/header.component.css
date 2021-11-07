@@ -23,6 +23,7 @@ h1 a img {
 
 .categorias a {
   font-size: 24px;
+  font-weight: 600;
   color: var(--light-gray);
 }
 
@@ -68,3 +69,61 @@ h1 a img {
   justify-content: center;
   align-items: center;
 }
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    color: var(--main);
+    cursor: pointer;
+  }
+
+  .categorias {
+    display: none;
+  }
+
+  .icons {
+    display: none
+  }
+}
+
+.hamburger-menu {
+  background-color: var(--main);
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  color: #fff;
+}
+
+.hamburger-menu span {
+  position: relative;
+  left: 155px;
+  top: 40px;
+
+}
+
+.categorias-responsive, .menu-responsive {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.hamburger-menu a  {
+  text-decoration: none;
+  color: white
+}
+
+.categorias-responsive a:hover, .menu-responsive a:hover {
+  background-color: rgba(92, 121, 194, 0.788);
+}
+

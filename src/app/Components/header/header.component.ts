@@ -21,4 +21,10 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/login'])
     }
   }
+
+  menuOpen = false
+  toggleMenu(){
+    console.log(this.menuOpen)
+    this.menuOpen =! this.menuOpen
+  }
 }
