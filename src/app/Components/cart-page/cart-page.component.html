@@ -10,11 +10,13 @@
       <div class="product-wrapper">
         <div class="name-price">
           <h2>{{product.name}}</h2>
-              <p class="price-delete">{{product.quantity}}x R${{product.price}}
-                <span class="material-icons" (click)="deleteProduct(product)">
-                  clear
-                </span>
-              </p>
+          <div class="price-delete">
+              <p>{{product.quantity}}x R${{product.price}} </p>
+              <span class="material-icons" (click)="deleteProduct(product)">
+                clear
+              </span>
+          </div>
+
         </div>
         <div class="product-info">
            <select [(ngModel)] = "product.size" (change)="syncCart()">
@@ -28,6 +30,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="price-delete-responsive">
+      <p>{{product.quantity}}x R${{product.price}}</p>
     </div>
     <hr/>
   </section>

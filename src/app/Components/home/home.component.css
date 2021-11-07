@@ -1,4 +1,8 @@
 
+main {
+  box-sizing: border-box;
+}
+
 section {
   margin-top: 2.5em;
   width: 100%;
@@ -12,7 +16,6 @@ p {
   display: flex;
   justify-content: center;
   align-items:flex-start;
-  height:85vh;
   width:100%;
 }
 
@@ -98,3 +101,45 @@ h2 {
   opacity: 1;
 }
 
+span.owl-nav  {
+  color: red;
+  background-color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .img-principal img {
+    width: 280px;
+    height: 480px;
+
+  }
+
+  .img-secundaria img{
+    height: 270px;
+    object-fit: contain;
+
+  }
+
+  .texto-promo {
+    width: 220px;
+    padding: 20px;
+    height: 100%;
+    margin-left: 10px;
+  }
+
+  .banner {
+    align-items: center;
+    gap: 1em;
+  }
+
+  .imgs img {
+    width: 200px;
+    height: 240px;
+  }
+
+  .overlay-container {
+    position: relative;
+    max-width: 200px;
+    max-height: 240px;
+  }
+
+}

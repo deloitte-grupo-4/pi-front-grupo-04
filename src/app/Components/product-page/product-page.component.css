@@ -116,16 +116,67 @@ h2 {
   font-weight: 600;
   color: var(--gray);
   font-size: 28px;
-  margin-bottom:  15px;
+  margin-bottom:  25px;
 }
 
 .imgs {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin-bottom: 50px;
+  gap: 10px;
 }
 
 .imgs img {
   width: 260px;
   height: 300px;
+  display: inline;
+}
+
+.overlay-container {
+  position: relative;
+  max-width: 260px;
+  max-height: 300px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(	62,	99,	194, .9);
+  color: #f1f1f1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.overlay-container:hover .overlay {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .product{
+    flex-direction: column;
+  }
+
+  .product-box {
+    width: 100%
+  }
+
+  .sizes span, .qtd span, .product-box .qtd button  {
+    padding: .5em 1.3em;
+  }
+
+  .img-principal {
+   width: 350px;
+    height: 350px;
+  }
 }

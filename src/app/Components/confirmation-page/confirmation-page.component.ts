@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../../Services/shopping-cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shoppingCartService:ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.shoppingCartService.removeAll();
   }
 
 }

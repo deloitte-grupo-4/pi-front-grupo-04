@@ -26,27 +26,36 @@
   </section>
   <section class="container">
     <h2>mais vendidos</h2>
-    <div class="imgs">
-      <a [routerLink]="['/product', { id: product.id }]" *ngFor="let product of products | slice:0:4;" class="overlay-container">
-        <img src={{product.url}}>
-        <div class="overlay">
-          <h5>{{product.name}}</h5>
-          <p>R${{product.price}}</p>
+    <owl-carousel-o [options]="customOptions" >
+      <ng-template carouselSlide *ngFor="let product of products | slice:0:8;" >
+        <div class="slide"  class="overlay-container">
+          <a [routerLink]="['/product', { id: product.id }]">
+            <img src={{product.url}}>
+            <div class="overlay">
+              <h5>{{product.name}}</h5>
+              <p>R${{product.price}}</p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+      </ng-template>
+    </owl-carousel-o>
+
   </section>
   <section class="container">
     <h2>coleção 2021</h2>
-    <div class="imgs">
-      <a [routerLink]="['/product', { id: product.id }]" *ngFor="let product of products | slice:4:8;" class="overlay-container">
-        <img src={{product.url}}>
-        <div class="overlay">
-          <h5>{{product.name}}</h5>
-          <p>R${{product.price}}</p>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let product of products | slice:15:24;" >
+        <div class="slide"  class="overlay-container">
+          <a [routerLink]="['/product', { id: product.id }]">
+            <img src={{product.url}}>
+            <div class="overlay">
+              <h5>{{product.name}}</h5>
+              <p>R${{product.price}}</p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+      </ng-template>
+    </owl-carousel-o>
   </section>
   <app-footer></app-footer>
 </main>

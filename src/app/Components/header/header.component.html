@@ -8,7 +8,6 @@
     </h1>
   </div>
   <div class="categorias">
-    <!-- <a routerLink="/" [routerLinkActive] = "['selected']">home</a> -->
     <a routerLink="/category/series" [routerLinkActive] = "['selected']">séries</a>
     <a routerLink="/category/bandas" [routerLinkActive] = "['selected']">bandas</a>
     <a routerLink="/category/filmes" [routerLinkActive] = "['selected']">filmes</a>
@@ -25,5 +24,27 @@
           <img src="../../../assets/icons/cart-icon.svg">
           <div *ngIf = "cart.getCart().length > 0" class="orange-circle"><span>{{cart.getCart().length}}</span></div>
       </a>
+  </div>
+  <div class="hamburger">
+    <a (click)="toggleMenu()">☰</a>
+    <div *ngIf='menuOpen' class="hamburger-menu">
+      <span class="material-icons" (click)="toggleMenu()">
+        close
+      </span>
+      <div class="categorias-responsive">
+        <a routerLink="/category/series" [routerLinkActive] = "['selected']">séries</a>
+        <a routerLink="/category/bandas" [routerLinkActive] = "['selected']">bandas</a>
+        <a routerLink="/category/filmes" [routerLinkActive] = "['selected']">filmes</a>
+        <a routerLink="/category/games" [routerLinkActive] = "['selected']">games</a>
+      </div>
+
+      <div class="menu-responsive">
+        <a (click)="loggedIn()">perfil</a>
+        <a routerLink="/shopping-cart">carrinho</a>
+      </div>
+
+    </div>
+
+
   </div>
 </header>

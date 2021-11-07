@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DEFAULT_CURRENCY_CODE, LOCALE_ID, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/Models/product.model';
 import { ProductService } from 'src/app/Services/product.service';
@@ -9,10 +9,11 @@ import { ShoppingCartService } from 'src/app/Services/shopping-cart.service';
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
-  styleUrls: ['./product-page.component.css']
+  styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
   product: Product = new Product();
+  products: Product[] = [];
 
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
@@ -20,6 +21,9 @@ export class ProductPageComponent implements OnInit {
     public cart: ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.productService.getProducts().subscribe(products => {
+      this.products = products;
+    });
     let id:any = this.route.snapshot.paramMap.get('id')
     if(id) {
       id = parseInt(id);
@@ -45,7 +49,7 @@ export class ProductPageComponent implements OnInit {
     this.selectedSize = selectedSize.name;
   }
 
-  quantity = 2;
+  quantity = 1;
 
   clickIncrease(){
     this.quantity++;

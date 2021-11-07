@@ -17,7 +17,7 @@ export class PaymentPageComponent implements OnInit {
   selectedValue = 'boleto'
   loading = false;
   text = 'Finalizar compra';
-  id: User | undefined;
+  // id: User | undefined;
 
 
   constructor(private cepService:CepService,
@@ -43,11 +43,11 @@ export class PaymentPageComponent implements OnInit {
     }
   }
 
-  getUser() {
-    this.userService.getById().subscribe((resp: User) => {
-      this.id = resp;
-    });
-  }
+  // getUser() {
+  //   this.userService.getById().subscribe((resp: User) => {
+  //     this.id = resp;
+  //   });
+  // }
 
 
   submitOrder(event:any){
@@ -57,13 +57,7 @@ export class PaymentPageComponent implements OnInit {
     let order = {
       shoppingCart : this.shoppingCartService.getCart(),
       deliveryAddress : this.cep,
-      // cep: this.cep.cep,
-      // city: this.cep.cidade,
-      // logradouro: this.cep.logradouro,
-      // number: this.cep.numero,
-      // state: this.cep.estado,
       user: this.userService.getUserID(),
-      total: 8,
       paymentMethod: this.selectedValue,
     }
     console.log(order);
