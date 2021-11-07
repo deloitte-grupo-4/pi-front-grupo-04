@@ -92,7 +92,7 @@ h1 a img {
 }
 
 .hamburger-menu {
-  background-color: var(--main);
+  background-color:  rgba(68, 104, 196, 0.932);
   width: 200px;
   height: 100%;
   position: absolute;
