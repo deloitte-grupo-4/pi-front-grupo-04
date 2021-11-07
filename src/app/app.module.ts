@@ -2,8 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AuthenticationGuard } from './auth/authentication.guard';
 import { AuthenticationComponent } from './Components/authentication/authentication.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
+import { CategoryPageComponent } from './Components/category-page/category-page.component';
 import { ConfirmationPageComponent } from './Components/confirmation-page/confirmation-page.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { FormProductComponent } from './Components/form-product/form-product.component';
@@ -25,11 +26,6 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 import { CepService } from './Services/cep.service';
-import { CategoryPageComponent } from './Components/category-page/category-page.component';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -49,7 +45,7 @@ import { CategoryPageComponent } from './Components/category-page/category-page.
     ProgressBarComponent,
     UserPageComponent,
     FooterComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,12 +54,9 @@ import { CategoryPageComponent } from './Components/category-page/category-page.
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
-    CarouselModule  
+    CarouselModule,
   ],
-  providers: [
-    AuthenticationGuard,
-    CepService
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthenticationGuard, CepService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
