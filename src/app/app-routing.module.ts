@@ -15,66 +15,78 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 
-
 const routes: Routes = [
-
-    {
-
-
-
-      path: '', component: MainComponent,
-      children: [
-        {
-          path: '', component: HomeComponent
-        },
-        {
-          path: 'product-list', component: ProductListComponent,
-        },
-        {
-          path: 'product-form', component: FormProductComponent
-        },
-        {
-          path: 'product', component: ProductPageComponent
-        },
-        {
-          path: 'shopping-cart', component: CartPageComponent
-        },
-        {
-          path: 'register', component: SignupComponent
-        },
-        {
-          path: 'payment', component: PaymentPageComponent,
-          canActivate: [AuthenticationGuard]
-        },
-        {
-          path: 'confirmation', component: ConfirmationPageComponent,
-          canActivate: [AuthenticationGuard]
-        },
-        {
-          path: 'category/:category', component: CategoryPageComponent,
-        },
-        {
-          path: 'profile', component: UserPageComponent,
-          canActivate: [AuthenticationGuard]
-        }
-      ],
-    },
-    {
-      path: '', component: AuthenticationComponent,
-      children: [
-        {
-          path: '', redirectTo: 'login', pathMatch: 'full'
-        },
-        {
-          path: 'login', component: SigninComponent
-        }
-      ]
-    }
-  ];
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'product-list',
+        component: ProductListComponent,
+      },
+      {
+        path: 'product-form',
+        component: FormProductComponent,
+      },
+      {
+        path: 'product',
+        component: ProductPageComponent,
+      },
+      {
+        path: 'shopping-cart',
+        component: CartPageComponent,
+      },
+      {
+        path: 'register',
+        component: SignupComponent,
+      },
+      {
+        path: 'payment',
+        component: PaymentPageComponent,
+        canActivate: [AuthenticationGuard],
+      },
+      {
+        path: 'confirmation',
+        component: ConfirmationPageComponent,
+        canActivate: [AuthenticationGuard],
+      },
+      {
+        path: 'category/:category',
+        component: CategoryPageComponent,
+      },
+      {
+        path: 'profile',
+        component: UserPageComponent,
+        canActivate: [AuthenticationGuard],
+      },
+    ],
+  },
+  {
+    path: '',
+    component: AuthenticationComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+      },
+      {
+        path: 'login',
+        component: SigninComponent,
+      },
+    ],
+  },
+];
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
-    scrollPositionRestoration: 'enabled'
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
