@@ -55,17 +55,18 @@ export class PaymentPageComponent implements OnInit {
     this.text = ''
     event.preventDefault();
     let order = {
-       // shoppingCart : this.shoppingCartService.getCart(),
-      // deliveryAddress : this.cep,
-      cep: this.cep.cep,
-      city: this.cep.cidade,
-      logradouro: this.cep.logradouro,
-      number: this.cep.numero,
-      state: this.cep.estado,
-      user: this.id,
+      shoppingCart : this.shoppingCartService.getCart(),
+      deliveryAddress : this.cep,
+      // cep: this.cep.cep,
+      // city: this.cep.cidade,
+      // logradouro: this.cep.logradouro,
+      // number: this.cep.numero,
+      // state: this.cep.estado,
+      user: this.userService.getUserID(),
       total: 8,
-      // paymentMethod: this.selectedValue,
+      paymentMethod: this.selectedValue,
     }
+    console.log(order);
     this.orderService.submitOrder(order).subscribe((res:any) => {
       if(res.status == 200){
         this.router.navigate(['/confirmation'])
