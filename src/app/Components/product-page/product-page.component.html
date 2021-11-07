@@ -45,10 +45,13 @@
   <section class="container">
       <h2>você também pode gostar</h2>
       <div class="imgs">
-           <img src="../../../assets/img/img2.png">
-           <img src="../../../assets/img/img2.png">
-           <img src="../../../assets/img/img2.png">
-           <img src="../../../assets/img/img2.png">
-       </div>
+        <a [routerLink]="['/product', { id: product.id }]" *ngFor="let product of products | slice:11:15;" class="overlay-container">
+          <img src={{product.url}}>
+          <div class="overlay">
+            <h5>{{product.name}}</h5>
+            <p>R${{product.price}}</p>
+          </div>
+        </a>
+        </div>
   </section>
 </main>

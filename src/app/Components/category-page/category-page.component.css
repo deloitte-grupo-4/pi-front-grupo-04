@@ -30,6 +30,10 @@ section {
   margin-top: 2.5em;
 }
 
+.card{
+  width: 260px;
+}
+
 .imgs {
   display: flex;
   flex-direction: row;
@@ -39,7 +43,7 @@ section {
 }
 
 .imgs img {
-  width: 260px;
+  width: 250px;
   height: 300px;
   display: inline;
 }
