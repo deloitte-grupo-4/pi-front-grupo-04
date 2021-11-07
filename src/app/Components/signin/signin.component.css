@@ -61,8 +61,8 @@ button {
     margin: 6em auto 0 auto;
     width: 80%;
   }
-  input, button {
+  input, button, p {
     margin: 0 auto;
-    width: 300px;
+    width: 250px;
   }
 }
