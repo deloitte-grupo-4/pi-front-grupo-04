@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   loggedIn(){
-    if(this.userService.getUser()) {
+      if(this.userService.getUserID()) {
       this.router.navigate(['/profile'])
     } else {
       this.router.navigate(['/login'])

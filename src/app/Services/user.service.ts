@@ -32,12 +32,12 @@ export class UserService {
   }
 
   getById(){
-    let id = this.getUser()
+    let id = this.getUserID()
     let usuario = this.http.get(`http://localhost:8080/user/${id}`).pipe(take(1))
     return usuario
   }
 
-  public getUser() {
+  public getUserID() {
     let savedUser = sessionStorage.getItem('id');
     if(savedUser){
       savedUser = JSON.parse(savedUser)

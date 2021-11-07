@@ -23,7 +23,7 @@ export class CartPageComponent implements OnInit {
     this.products = this.cart.getCart()
     this.calculateTotal();
 
-    this.user = this.userService.getUser();
+    this.user = this.userService.getUserID();
   }
 
   clickIncrease(product:CartProduct){
