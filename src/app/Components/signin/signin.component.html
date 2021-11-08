@@ -1,7 +1,11 @@
 <app-header *ngIf="router.url == '/login'"></app-header>
 <main>
   <div [ngClass]="applyClass(router.url)">
-    <span class="material-icons" (click)="cancel()" *ngIf = "router.url !== '/login'">
+    <span
+      class="material-icons"
+      (click)="cancel()"
+      *ngIf="router.url !== '/login'"
+    >
       close
     </span>
     <h1 class="text-center">Login</h1>
@@ -14,7 +18,22 @@
           placeholder="E-mail"
           autofocus
           [(ngModel)]="username"
+          #userName="ngModel"
+          required
+          email
         />
+        <div
+          class="text-danger text-center mt-2 small"
+          *ngIf="userName.touched && userName.errors?.required"
+        >
+          Email is required
+        </div>
+        <div
+          class="text-danger text-center mt-2 small"
+          *ngIf="userName.touched && userName.errors?.email"
+        >
+          Enter a valid email address
+        </div>
       </div>
 
       <div class="form-group">
@@ -25,13 +44,35 @@
           class="form-control"
           placeholder="Senha"
           [(ngModel)]="password"
+          #userPassword="ngModel"
+          required
+          minlength="5"
         />
+        <div
+          class="text-danger text-center mt-2 small"
+          *ngIf="userPassword.touched && userPassword.errors?.required"
+        >
+          Password is required
+        </div>
+        <div
+          class="text-danger text-center mt-2 small"
+          *ngIf="userPassword.touched && userPassword.errors?.minlength"
+        >
+          Password should have minimum 5 characters.
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary btn-block"[disabled]="loading">
-        <i class="fa fa-circle-o-notch fa-spin" *ngIf="loading"></i>{{text}}</button>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="loading || userPassword.invalid"
+      >
+        <i class="fa fa-circle-o-notch fa-spin" *ngIf="loading"></i>{{ text }}
+      </button>
     </form>
 
-    <p>Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a></p>
-
+    <p>
+      Ainda não tem uma conta? <a routerLink="/register">Registre-se aqui</a>
+    </p>
   </div>
 </main>
