@@ -1,36 +1,147 @@
 <app-header></app-header>
 <main>
   <h1 class="text-center">Cadastre-se</h1>
-  <div class="form-wrapper">
-    <form #register="ngForm" (ngSubmit)="onSubmit(register.value)" class="form mt-4">
-      <div class="form-group">
-        <label for="name">Nome:</label>
-        <input type="text" name="name" id="name" class="form-x" placeholder="Digite o seu nome" ngModel>
-      </div>
-      <div class="form-group">
-        <label for="surname">Sobrenome:</label>
-        <input type="text" name="surname" id="surname" class="form-control" placeholder="Digite o seu sobrenome" ngModel>
-      </div>
-      <div class="form-group">
-        <label for="username"> E-mail:</label>
-        <input type="email" name="username" id="username" class="form-control" placeholder="Digite o seu email" ngModel>
-      </div>
-      <div class="form-group">
-        <label for="password">Senha</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Digite a sua senha"
-          ngModel>
-      </div>
-      <div class="form-group">
-        <label for="conf">Confirmação de senha: </label>
-        <input type="password" name="conf" id="conf" placeholder="Digite novamente a sua senha" class="form-control">
-      </div>
-      <div class="controles">
-        <button type="submit" class="buttonload btn btn-primary btn-block" [disabled]="loading">
-          <i class="fa fa-circle-o-notch fa-spin" *ngIf="loading"></i>{{text}}
-        </button>
-        <a routerLink="/">Voltar a página inicial</a>
-      </div>
-    </form>
 
-  </div>
+  <form
+    #register="ngForm"
+    (ngSubmit)="onSubmit(register.value)"
+    class="form mt-4"
+  >
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        placeholder="Digite o seu nome"
+        ngModel
+        #formName="ngModel"
+        required
+      />
+
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="formName.touched && formName.errors?.required"
+      >
+        É necessário um nome.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="surname">Sobrenome:</label>
+      <input
+        type="text"
+        name="surname"
+        id="surname"
+        class="form-control"
+        placeholder="Digite o seu sobrenome"
+        ngModel
+        #formSurname="ngModel"
+        required
+      />
+
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="formSurname.touched && formSurname.errors?.required"
+      >
+        É necessário um sobrenome.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="username"> E-mail:</label>
+      <input
+        type="email"
+        name="username"
+        id="username"
+        class="form-control"
+        placeholder="Digite o seu email"
+        ngModel
+        #email="ngModel"
+        required
+        email
+      />
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="email.touched && email.errors?.required"
+      >
+        É necessário um e-mail.
+      </div>
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="email.touched && email.errors?.email"
+      >
+        Escreva um e-mail válido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="form-control"
+        placeholder="Digite a sua senha"
+        ngModel
+        name="password"
+        #password="ngModel"
+        minlength="5"
+        required
+      />
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="password.touched && password.errors?.required"
+      >
+        É necessário uma senha.
+      </div>
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="password.touched && password.errors?.minlength"
+      >
+        A senha deve ter o mínimo de 5 caracteres.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="conf">Confirmação de senha: </label>
+      <input
+        type="password"
+        name="conf"
+        id="conf"
+        placeholder="Digite novamente a sua senha"
+        class="form-control"
+        ngModel
+        name="confirmPassword"
+        #confirmPassword="ngModel"
+        required
+      />
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="confirmPassword.touched && confirmPassword.errors?.required"
+      >
+        Confirme sua senha.
+      </div>
+      <div
+        class="text-danger text-center mt-2 small"
+        *ngIf="
+          confirmPassword.touched && confirmPassword.errors?.passwordMismatch
+        "
+      >
+        As senhas não são iguais.
+      </div>
+    </div>
+
+    <div class="controles">
+      <button
+        type="submit"
+        class="buttonload btn btn-primary btn-block"
+        [disabled]="loading || register.invalid"
+      >
+        <i class="fa fa-circle-o-notch fa-spin" *ngIf="loading"></i>{{ text }}
+      </button>
+      <a routerLink="/">Voltar a página inicial</a>
+    </div>
+  </form>
 </main>

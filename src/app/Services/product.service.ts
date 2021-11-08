@@ -13,7 +13,7 @@ export class ProductService {
 
   constructor(private http:HttpClient) {}
 
-  public createProduct(product:Product):void{
+  public createProduct(product:Product){
     this.http.post('https://e-stampas.herokuapp.com/product', product).subscribe();
   }
 
@@ -22,13 +22,13 @@ export class ProductService {
     return this.http.get<Product[]>('https://e-stampas.herokuapp.com/product');
   }
 
-  public putProducts(product:Product):void {
+  public putProducts(product:Product){
     this.http.put('https://e-stampas.herokuapp.com/product', product).subscribe((result) => {
       console.log(result);
     });
   }
 
-  public receiveProduct(product:Product):void{
+  public receiveProduct(product:Product){
     let obs = this.http.get<Product>(`https://e-stampas.herokuapp.com/product/${product.id}`);
     obs.subscribe((result)=>{
       this.onEditClick.emit(result);
@@ -40,7 +40,7 @@ export class ProductService {
     return obs
   }
 
-  public deleteProduct(productId:number | undefined):void {
+  public deleteProduct(productId:number | undefined){
     this.http.delete(`https://e-stampas.herokuapp.com/${productId}`).subscribe();
     console.log(productId);
   }
