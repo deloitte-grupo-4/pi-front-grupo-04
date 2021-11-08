@@ -40,7 +40,7 @@ export class ProductService {
     return obs
   }
 
-  public deleteProduct(productId:number | undefined):void {
+  public deleteProduct(productId:number | undefined){
     this.http.delete(`https://e-stampas.herokuapp.com/${productId}`).subscribe();
     console.log(productId);
   }
