@@ -27,7 +27,7 @@
   <section class="container">
     <h2>mais vendidos</h2>
     <owl-carousel-o [options]="customOptions" >
-      <ng-template carouselSlide *ngFor="let product of products | slice:0:8;" >
+      <ng-template carouselSlide *ngFor="let product of products | slice:10:19;" >
         <div class="slide"  class="overlay-container">
           <a [routerLink]="['/product', { id: product.id }]">
             <img src={{product.url}}>
@@ -44,7 +44,7 @@
   <section class="container">
     <h2>coleção 2021</h2>
     <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide *ngFor="let product of products | slice:15:24;" >
+      <ng-template carouselSlide *ngFor="let product of products | slice:25:31;" >
         <div class="slide"  class="overlay-container">
           <a [routerLink]="['/product', { id: product.id }]">
             <img src={{product.url}}>
