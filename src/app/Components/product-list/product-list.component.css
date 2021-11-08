@@ -8,6 +8,10 @@ button a:hover {
   color: white;
 }
 
+a {
+  color: var(--main)
+}
+
 .btn-list{
   display:flex;
   justify-content: center;
